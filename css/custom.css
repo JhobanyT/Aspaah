@@ -262,6 +262,41 @@ a {
 .footer-social li a i {
   color: #c4bdc4; }
 
+.footer-jhey {
+  position: absolute; }
+
+#footer {
+  animation-name: svganimation;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  position: fixed;
+  /*    z-index: 4;*/ }
+
+@keyframes svganimation {
+  0% {
+    left: 0%;
+    bottom: 0%; }
+  100% {
+    left: -100%;
+    bottom: 0%; } }
+
+#footer1 {
+  animation-name: svganimation1;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  position: relative;
+  /*  z-index: 1;*/ }
+
+@keyframes svganimation1 {
+  0% {
+    right: 0%;
+    bottom: 0%; }
+  100% {
+    right: -100%;
+    bottom: 0%; } }
+
 /*!
  * Bootstrap v5.0.0-beta3 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors

@@ -339,4 +339,51 @@ $color-active: #A2C54A;
 }
 
 
+
+
+
+.footer-jhey{
+    position: absolute;
+
+}
+#footer{
+    animation-name: svganimation;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count:infinite ;
+    position: fixed;
+/*    z-index: 4;*/
+}
+@keyframes svganimation {
+    0%{
+        left: 0%;
+        bottom: 0%;
+    }
+    100%{
+        left:-100%;
+        bottom: 0%;
+    }
+}
+#footer1{
+    animation-name: svganimation1;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count:infinite ;
+    position: relative;
+  /*  z-index: 1;*/
+}
+@keyframes svganimation1 {
+    0%{
+        right: 0%;
+        bottom: 0%;
+    }
+    100%{
+        right:-100%;
+        bottom: 0%;
+    }
+}
+
+
+
+
 @import "../node_modules/bootstrap/scss/bootstrap.scss";

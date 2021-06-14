@@ -1,7 +1,6 @@
 {
   "name": "1",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "dependencies": {
     "bootstrap": "^5.0.0-beta3"
@@ -12,5 +11,14 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JhobanyT/Aspaah.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JhobanyT/Aspaah/issues"
+  },
+  "homepage": "https://github.com/JhobanyT/Aspaah#readme",
+  "description": ""
 }
