@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   min-height: 200vh; }
 
@@ -8,7 +9,9 @@ a {
   width: 50px; }
 
 #estilo_nav {
-  background-color: rgba(32, 32, 32, 0.8) !important; }
+  background-color: rgba(32, 32, 32, 0.6) !important;
+  position: absolute !important;
+  top: 0%; }
 
 .lista_nav a {
   text-decoration: none;
@@ -254,6 +257,27 @@ a {
 
 .slider_imgvehiculos_principal img {
   height: 250px; }
+
+.esquema_general {
+  min-height: 100vh;
+  background-color: #a6f6f0; }
+
+.aboutl {
+  font-size: 47px;
+  color: #0b1d12;
+  transition: all .5s; }
+
+.aboutl:hover {
+  font-size: 47px;
+  border-bottom: solid 4px #0f553c;
+  color: #0f553c; }
+
+.propiedades_diseño1 img {
+  height: 50px;
+  float: right; }
+
+.propiedades_diseño2 img {
+  height: 50px; }
 
 .footer-social {
   list-style: none;

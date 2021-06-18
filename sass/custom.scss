@@ -7,10 +7,11 @@ a {
 #logo {
     width: 50px;
 }
-
 $color-active: #A2C54A;
 #estilo_nav {
-	background-color: rgba(32, 32, 32, .8)!important;
+	background-color: rgba(32, 32, 32, .6)!important;
+	position: absolute !important;
+	top: 0%;
 }
 .lista_nav a{
 	text-decoration: none;
@@ -314,6 +315,47 @@ $color-active: #A2C54A;
 }
 .slider_imgvehiculos_principal img {
 	height: 250px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.esquema_general {
+	min-height: 100vh;
+	background-color: #a6f6f0;
+}
+.aboutl{
+	font-size: 47px;
+	color: rgb(11, 29, 18);
+	transition: all .5s;
+}
+.aboutl:hover{
+	font-size: 47px;
+	border-bottom: solid 4px rgb(15, 85, 60);
+	color: rgb(15, 85, 60);
+}
+.propiedades_diseño1 img{
+	height: 50px;
+	float: right;
+}
+.propiedades_diseño2 img{
+	height: 50px;
 }
 
 
