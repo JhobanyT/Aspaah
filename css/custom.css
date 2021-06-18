@@ -263,14 +263,15 @@ a {
   color: #c4bdc4; }
 
 .footer-jhey {
-  position: absolute; }
+  position: absolute;
+  overflow: hidden; }
 
 #footer {
   animation-name: svganimation;
-  animation-duration: 3s;
+  animation-duration: 12s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-  position: fixed;
+  position: absolute;
   /*    z-index: 4;*/ }
 
 @keyframes svganimation {
@@ -283,7 +284,7 @@ a {
 
 #footer1 {
   animation-name: svganimation1;
-  animation-duration: 3s;
+  animation-duration: 12s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   position: relative;
