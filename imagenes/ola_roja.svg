@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="1920mm"
-   height="250mm"
-   viewBox="0 0 1920 250"
+   width="2500mm"
+   height="500mm"
+   viewBox="0 0 2500 500"
    version="1.1"
    id="svg5"
    inkscape:version="1.1 (c68e22c387, 2021-05-23)"
@@ -24,14 +24,14 @@
      inkscape:document-units="px"
      showgrid="false"
      width="1920mm"
-     inkscape:zoom="0.23523112"
-     inkscape:cx="3628.3465"
-     inkscape:cy="1511.2796"
-     inkscape:window-width="960"
+     inkscape:zoom="0.1806575"
+     inkscape:cx="3661.6249"
+     inkscape:cy="943.77482"
+     inkscape:window-width="1920"
      inkscape:window-height="1027"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
-     inkscape:window-maximized="0"
+     inkscape:window-maximized="1"
      inkscape:current-layer="layer1"
      height="500mm" />
   <defs
@@ -41,8 +41,8 @@
      inkscape:groupmode="layer"
      id="layer1">
     <path
-       style="fill:#be4449;stroke:#be4449;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0.68627453;fill-opacity:0.68627453"
-       d="M 1918.8752,4.4991213 C 1752.4077,1.1247803 1806.3972,191.21265 1659.0509,130.47451 1511.7047,69.736379 1455.4657,-43.866432 1346.362,21.370826 1237.2583,86.608083 1264.253,239.57821 1064.0422,125.97539 863.83126,12.372583 858.20736,-43.866432 690.61512,57.363796 523.02285,158.59402 467.90861,134.97364 368.92793,71.985938 269.94728,8.9982425 240.70298,-43.866432 113.60281,59.613355 -13.497364,163.09314 0,147.34622 0,147.34622 L 1.1247803,254.20035 1921.1247,249.70123 Z"
-       id="path3105" />
+       style="fill:#00a300;stroke:#00a300;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0.6901961;fill-opacity:0.6901961"
+       d="M 2495.6063,377.85587 C 2094.3175,166.95958 2088.4593,121.55829 1867.3111,219.68365 1646.1628,317.80903 1550.9666,445.22553 1253.6614,335.38371 956.35616,225.54188 777.68012,146.45577 506.73695,281.19509 235.79379,415.93439 16.110134,285.58876 16.110134,285.58876 L -1.4645577,275.33684 1.4645577,502.34328 2505.8582,499.41416 Z"
+       id="path3285" />
   </g>
 </svg>
