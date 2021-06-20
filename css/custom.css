@@ -322,6 +322,26 @@ a {
     right: 0%;
     bottom: 0%; } }
 
+footer a {
+  text-decoration: none;
+  color: #6cd386; }
+
+footer ul li a {
+  font-size: 50px; }
+
+.contactos li a i {
+  color: #000;
+  font-size: 20px; }
+
+.contactos li a {
+  font-size: 20px; }
+
+.contactos {
+  list-style: none; }
+
+.jhey_info {
+  position: relative; }
+
 /*!
  * Bootstrap v5.0.0-beta3 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
