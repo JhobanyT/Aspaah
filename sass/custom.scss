@@ -386,15 +386,20 @@ $color-active: #A2C54A;
 
 
 .footer-jhey{
-    position: absolute;
+    position: relative;
 	overflow: hidden;
+	width: 100%;
+	height: 250px;
 }
 #footer{
+	position: absolute;
+	height: 100%;
+	width: 200%;
+	bottom: 0;
     animation-name: svganimation;
     animation-duration: 10s;
     animation-timing-function: linear;
     animation-iteration-count:infinite ;
-    position: absolute;
 /*    z-index: 4;*/
 }
 @keyframes svganimation {
@@ -408,20 +413,23 @@ $color-active: #A2C54A;
     }
 }
 #footer1{
+	position: absolute;
+	height: 100%;
+	width: 200%;
+	bottom: 0;
     animation-name: svganimation1;
     animation-duration: 10s;
     animation-timing-function: linear;
-    animation-iteration-count:infinite ;
-    position: relative;
+    animation-iteration-count: infinite ;
 /*  z-index: 1;*/
 }
 @keyframes svganimation1 {
     0%{
-        right: 100%;
+        right: 50%;
         bottom: 0%;
     }
     100%{
-        right:0%;
+        right: -100%;
         bottom: 0%;
     }
 }
@@ -452,18 +460,17 @@ footer ul li a{
 	top: 0px;
 	left: 0px;
 	right: 0px;
-	margin-top: 10%;
-
-
-	/* z-index: 3; */
-
+	margin-top: 1em;
+	z-index: 1000;
 }
 .img-svg{
-	/* z-index: 1; */
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	position: relative;
+	z-index: -100;
 }
-.footer-jhey{
-	position:relative;
-}
+
 
 
 svg{

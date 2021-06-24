@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="5500mm"
+   height="500mm"
+   viewBox="0 0 5500 500"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   sodipodi:docname="ola_verde.svg">
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="px"
+     showgrid="false"
+     width="1920mm"
+     inkscape:zoom="0.32"
+     inkscape:cx="20198.433"
+     inkscape:cy="706.48281"
+     inkscape:window-width="1366"
+     inkscape:window-height="705"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     height="500mm"
+     inkscape:document-rotation="0"
+     units="mm" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       sodipodi:nodetypes="csssccccssssccc"
+       id="path3285"
+       d="M 2500.506,259.90804 C 2095.0748,-12.218924 2087.1454,-66.256688 1865.9972,79.631585 1644.8489,225.51989 1549.6527,315.53942 1252.3475,152.23164 955.04231,-11.076145 751.51191,-58.237025 480.56871,142.08721 209.62555,342.4114 14.796261,177.61627 14.796261,177.61627 L 0.06946831,165.09264 0.15068198,499.87692 5502.0991,508.81838 c -8.8526,-28.985 4.138,-241.9889 -11.3108,-379.81802 -6.1136,-54.543358 2.1472,-86.853981 -25.7491,-107.210769 C 5417.0677,-13.216656 5406.6278,187.80737 5174.1517,218.54947 3925.6433,383.64935 5596.5488,-4.4531507 5216.9925,26.536545 4487.8853,86.06607 4661.3209,181.71099 4255.4244,5.5669302 3899.743,59.256813 4007.9895,203.82562 3362.5322,4.0981659 2879.3347,43.970353 2852.7691,339.93483 2500.506,259.90804 Z"
+       style="fill:#00a300;fill-opacity:0.690196;stroke:#00a300;stroke-width:0.322612px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0.690196" />
+  </g>
+</svg>
