@@ -463,6 +463,48 @@ footer ul li a {
   position: relative;
   z-index: -100; }
 
+.box {
+  height: 300px;
+  padding: 0;
+  transition: all 5s;
+  position: relative; }
+
+.img-box {
+  height: 100%;
+  width: 100%;
+  opacity: .7;
+  position: absolute;
+  filter: saturate(150%) contrast(200%); }
+
+.box1 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.box2 {
+  width: 40%;
+  float: left;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.box2 img {
+  opacity: 0;
+  height: 100%; }
+
+.box:hover > .box2 img {
+  opacity: 1;
+  transition: all 1s; }
+
+.box:hover > .img-box {
+  opacity: 1;
+  filter: saturate(150%) contrast(200%); }
+
 svg {
   font-family: 'Montserrat';
   font-size: 15em;
