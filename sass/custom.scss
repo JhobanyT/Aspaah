@@ -12,7 +12,7 @@ button {
 .navbar-light .navbar-toggler {
 	background: linear-gradient(to right bottom,#079992, #009161) !important;
 }
-/*@keyframes entrada {	
+@keyframes entrada {	
 	0%{
 		opacity: 1;
 		transform: scale(1);
@@ -39,7 +39,7 @@ button {
 }
 .content_todo {
 	animation: entrada1 3s;	
-}*/
+}
 a {
     text-decoration: none;
 }
@@ -670,7 +670,7 @@ footer ul li a{
 
 
 
-/*svg{
+svg{
     font-family: 'Montserrat';
     font-size: 15em;
     font-weight: bold;
@@ -735,7 +735,6 @@ video{
 		animation: entrada 3s;
 		opacity: 0;
 		bottom: 0;
-		display: none;
 	}
 }
 @media (min-width: 480px) {
@@ -747,7 +746,6 @@ video{
 		animation: entrada 3s;
 		opacity: 0;
 		bottom: 0;
-		display: none;
 	}
 }
 @media (min-width: 768px) {
@@ -759,7 +757,6 @@ video{
 		animation: entrada 3s;
 		opacity: 0;
 		bottom: 0;
-		display: none;
 	}
 }
 @media (min-width: 900px) {
@@ -771,7 +768,6 @@ video{
 		animation: entrada 3s;
 		opacity: 0;
 		bottom: 0;
-		display: none;
 	}
 }
 @media (min-width: 1024px) {
@@ -783,7 +779,6 @@ video{
 		animation: entrada 3s;
 		opacity: 0;
 		bottom: 0;
-		display: none;
 	}
 }
 @media (min-width: 1200px) {
@@ -795,7 +790,6 @@ video{
 		animation: entrada 3s;
 		opacity: 0;
 		bottom: 0;
-		display: none;
 	}
 }
 @media (min-width: 1340px) {
@@ -807,9 +801,8 @@ video{
 		animation: entrada 3s;
 		opacity: 0;
 		bottom: 0;
-		display: none;
 	}
-}*/
+}
 
 
 
