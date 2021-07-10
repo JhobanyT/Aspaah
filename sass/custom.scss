@@ -529,7 +529,9 @@ $color-active: #A2C54A;
 .footer-social li a i{
     color: #c4bdc4;
 }
-
+.img-svg{
+	height: auto;
+}
 
 
 
@@ -553,7 +555,7 @@ $color-active: #A2C54A;
 }
 @keyframes svganimation {
     0%{
-        left: -50%;
+        left: -30%;
         bottom: 0%;
     }
     100%{
@@ -611,6 +613,7 @@ footer ul li a{
 	right: 0px;
 	margin-top: 1em;
 	z-index: 1000;
+	height: 100px;
 }
 .img-svg{
 	overflow: hidden;
@@ -618,6 +621,7 @@ footer ul li a{
 	height: 100%;
 	position: relative;
 	z-index: -100;
+	margin-top:100px;
 }
 .box{
 	height: 300px;
