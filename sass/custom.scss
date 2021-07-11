@@ -1145,6 +1145,17 @@ video{
 }
 
 /* Sección quienes somos HJVR  */
+/* Slider  */
+$carousel-control-color:             #6cd386;
+$carousel-dark-indicator-active-bg:  #6cd386;
+$carousel-dark-caption-color:        #6cd386;
+$carousel-indicator-active-bg:       #6cd386;
+$carousel-control-prev-icon-bg:      url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='fff'><path d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/></svg>");
+$carousel-control-next-icon-bg:      url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='{#6cd386;}'><path d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/></svg>");
+$carousel-indicator-width:           50px;
+$carousel-indicator-height:          6px;
+$carousel-indicator-spacer:          5px;
+
 .section-md{
 	padding: 100px 0 100px;
 }
@@ -1344,10 +1355,9 @@ h15{
     border: none;
     z-index: 1;
 }
-.button-primary, .button-primary:focus {
-    color: #f1efeb;
-    background-color: #3c6a36;
-    border-color: #3c6a36;
+.button-primary.button-pipaluk, .button-primary.button-pipaluk:focus {
+	background: transparent;
+	color: #f1efeb;
 }
 .button {
     position: relative;
@@ -1357,7 +1367,6 @@ h15{
     padding: 19px 32px 17px;
     font-size: 14px;
     line-height: 1.34;
-    border: 2px solid;
     font-weight: 500;
     letter-spacing: 0.075em;
     text-transform: uppercase;
@@ -1385,7 +1394,11 @@ h15{
     transition: all .3s ease-in-out;
 }
 .button-primary.button-pipaluk::after, .button-primary.button-pipaluk:focus::after {
-    border-color: #a61f1f;
+    border-color: #f1efeb;
+}
+.button-primary.button-pipaluk:hover, .button-primary.button-pipaluk:active {
+	color: #f1efeb;
+	background: transparent;
 }
 .button-pipaluk::after {
     position: absolute;
@@ -1403,6 +1416,19 @@ h15{
     will-change: transform;
     z-index: -1;
 }
+.button-pipaluk:hover::before, .button-pipaluk:active::before {
+	opacity: 0;
+	visibility: hidden;
+	transform: scale(0.9);
+	transition-duration: .2s;
+}
+.button-pipaluk:hover::after, .button-pipaluk:active::after {
+	opacity: 1;
+	visibility: visible;
+	transform: none;
+	transition-duration: .3s;
+	transition-delay: .1s;
+}
 .button-default-outline.button-wapasha, .button-default-outline.button-wapasha:focus {
     color: #6cd386;
     background: transparent;
@@ -1418,11 +1444,6 @@ h15{
     padding: 21px 34px 19px;
     border: none;
     z-index: 1;
-}
-.button-default-outline, .button-default-outline:focus {
-    color: #151515;
-    background-color: transparent;
-    border-color: #151515;
 }
 .button-default-outline.button-wapasha::before, .button-default-outline.button-wapasha:focus::before {
     border-color: #f1efeb;
@@ -1444,10 +1465,27 @@ h15{
     border-width: 2px;
     border-style: solid;
 }
-.button-default-outline.button-wapasha::after, .button-default-outline.button-wapasha:focus::after {
-    border-color: #3c6a36;
+.button-wapasha:hover::before, .button-wapasha:active::before {
+	opacity: 0;
+	visibility: hidden;
+	transform: translate3d(-8px, 8px, 0);
+	transition-duration: .2s;
 }
 
+.button-wapasha:hover::after, .button-wapasha:active::after {
+	opacity: 1;
+	visibility: visible;
+	transform: none;
+	transition-duration: .3s;
+}
+.button-default.button-wapasha::after, .button-default.button-wapasha:focus::after {
+	border-color: #6cd386;
+	color: #fff;
+}
+.button-default.button-wapasha:hover, .button-default.button-wapasha:active {
+	color: #3c6a36;
+	background: transparent;
+}
 .button-wapasha::after {
     opacity: 0;
     visibility: hidden;
@@ -1470,6 +1508,7 @@ h15{
 	color: #f1efeb;
 	font-weight: 600;
 }
+
 /* FIN Sección quienes somos HJVR  */
 
 
