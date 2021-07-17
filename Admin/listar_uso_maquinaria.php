@@ -188,12 +188,12 @@ include("conexion_maquinaria.php");
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Estado de maquinariasu</h1>
+            <h1 class="m-0">Uso de maquinarias</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="index2.php">Home</a></li>
-              <li class="breadcrumb-item active">Estado de maquinariasu</li>
+              <li class="breadcrumb-item active">Uso de Maquinarias</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -211,7 +211,7 @@ include("conexion_maquinaria.php");
 				</ul>
         <div class="container">
 		  <div class="content">
-			<h2>Lista de maquinariasu</h2>
+			<h2>Uso de Maquinarias</h2>
 			<hr />
 
 			<?php
@@ -266,9 +266,9 @@ include("conexion_maquinaria.php");
 						echo '
 						<tr>
 							<td>'.$row['id_maquinariau'].'</td>
-							<td>'.$row['idsocios'].'</td>
-              <td>'.$row['idmaquinaria'].'</td>
-              <td>'.$row['idoperador'].'</td>
+							<td><a href="datos_asociado_maquinaria.php?nik='.$row['id_maquinariau'].'"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> '.$row['idsocios'].'</a></td>
+							<td><a href="datos_maquinaria.php?nik='.$row['id_maquinariau'].'"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> '.$row['idmaquinaria'].'</a></td>
+							<td><a href="datos_operador.php?nik='.$row['id_maquinariau'].'"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> '.$row['idoperador'].'</a></td>
 							<td>'.$row['fecha_uso'].'</td>
 						echo
 							<td>
