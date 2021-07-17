@@ -39,7 +39,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
   <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
   <link rel="stylesheet" href="dist/css/extra.css">
 </head>
-<body class="hold-transition sidebar-mini layout-fixed">
+<body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">
 
   <!-- Preloader -->
@@ -144,6 +144,47 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                 <a href="./register.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Registrar Administrador</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item menu-open">
+            <a href="#" class="nav-link active">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                Dashboard
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="./plantillaDashboard.php" class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Socios</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="./plantillaDashboard.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Estado de Maquinaria</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="./plantillaDashboard.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Agregar Maquinaria</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="./plantillaDashboard.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Listar Uso de Maquinaria</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="./plantillaDashboard.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Agregar Uso de Maquinaria</p>
                 </a>
               </li>
               <li class="nav-item cerrar_sesion_boton">

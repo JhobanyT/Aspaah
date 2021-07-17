@@ -1,6 +1,15 @@
 <?php
-include("conexion_maquinaria.php");
+
+    session_start();
+
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    header("location: index.php");
+    exit;
+}
+
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,23 +19,26 @@ include("conexion_maquinaria.php");
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-  <!-- Font Awesome Icons -->
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
-  <!-- IonIcons -->
+  <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Tempusdominus Bootstrap 4 -->
+  <link rel="stylesheet" href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+  <!-- iCheck -->
+  <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <!-- JQVMap -->
+  <link rel="stylesheet" href="plugins/jqvmap/jqvmap.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
-  <link rel="stylesheet" href="dist/css/extra_maquinarias.css">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
+  <!-- summernote -->
+  <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
+  <link rel="stylesheet" href="dist/css/extra.css">
 </head>
-<!--
-`body` tag options:
-
-  Apply one or more of the following classes to to the body tag
-  to get the desired effect
-
-  * sidebar-collapse
-  * sidebar-mini
--->
 <body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">
 
@@ -43,13 +55,12 @@ include("conexion_maquinaria.php");
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="index.php" class="nav-link">Home</a>
+        <a href="listar_estado_maquinaria.php" class="nav-link">Home</a>
       </li>
     </ul>
 
-    <!-- Right navbar links -->
+
     <ul class="navbar-nav ml-auto">
-      <!-- Navbar Search -->
       <li class="nav-item">
         <a class="nav-link" data-widget="fullscreen" href="#" role="button">
           <i class="fas fa-expand-arrows-alt"></i>
@@ -83,6 +94,7 @@ include("conexion_maquinaria.php");
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+
           <li class="nav-item menu-open">
             <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -93,7 +105,7 @@ include("conexion_maquinaria.php");
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="./index2.php" class="nav-link">
+                <a href="./index2.php" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Socios</p>
                 </a>
@@ -105,7 +117,7 @@ include("conexion_maquinaria.php");
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./add_maquinaria.php" class="nav-link active">
+                <a href="./add_maquinaria.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Agregar Maquinaria</p>
                 </a>
@@ -125,7 +137,7 @@ include("conexion_maquinaria.php");
               <li class="nav-item">
                 <a href="./index8.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Editar Uso de Maquinaria</p>
+                  <p>Editar Uso de Maquinari</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -185,149 +197,73 @@ include("conexion_maquinaria.php");
       <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->
-  </aside>
+</aside>
 
-  <div class="content-wrapper">
+
+<div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
-      <div class="container-fluid">
+        <div class="container-fluid">
         <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0">Estado de maquinarias</h1>
-          </div><!-- /.col -->
-          <div class="col-sm-6">
+            <div class="col-sm-6">
+            <h1 class="m-0">Dashboard</h1>
+            </div><!-- /.col -->
+            <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="listar_estado_maquinaria2.php">Home</a></li>
-              <li class="breadcrumb-item active">Estado de maquinarias</li>
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item active">Dashboard v1</li>
             </ol>
-          </div><!-- /.col -->
+            </div><!-- /.col -->
         </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
+        </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
 
     <!-- Main content -->
     <section class="content">
-      <div class="container-fluid">
-        <!-- Info boxes -->
+        <div class="container-fluid">
         <div class="row">
-        <ul class="nav navbar-nav ">
-        <li><a href="listar_estado_maquinaria.php" class="active" id="botones_LA">Lista de Maquinarias</a><a href="add_maquinaria.php" id="botones_LA">Agregar Una Maquinaria</a></li>
-				</ul>
-        <div class="container">
-		<div class="content">
-			<h2>Agregar Maquinaria</h2>
-			<hr />
-
-			<?php
-			if(isset($_POST['add'])){
-				$idmaquinaria		     = mysqli_real_escape_string($con,(strip_tags($_POST["idmaquinaria"],ENT_QUOTES)));//Escanpando caracteres 
-				$modelo_maquinaria		     = mysqli_real_escape_string($con,(strip_tags($_POST["modelo_maquinaria"],ENT_QUOTES)));//Escanpando caracteres 
-				$potencia_maquinaria	 = mysqli_real_escape_string($con,(strip_tags($_POST["potencia_maquinaria"],ENT_QUOTES)));//Escanpando caracteres 
-				$descripcion_maquinaria	 = mysqli_real_escape_string($con,(strip_tags($_POST["descripcion_maquinaria"],ENT_QUOTES)));//Escanpando caracteres 
-				$cilindro_maquinaria	     = mysqli_real_escape_string($con,(strip_tags($_POST["cilindro_maquinaria"],ENT_QUOTES)));//Escanpando caracteres
-				$tipo_maquinaria		 = mysqli_real_escape_string($con,(strip_tags($_POST["tipo_maquinaria"],ENT_QUOTES)));//Escanpando caracteres 
-				$estado			 = mysqli_real_escape_string($con,(strip_tags($_POST["estado"],ENT_QUOTES)));//Escanpando caracteres 
-				
-			
-
-				$cek = mysqli_query($con, "SELECT * FROM maquinarias WHERE idmaquinaria='$idmaquinaria'");
-				if(mysqli_num_rows($cek) == 0){
-						$insert = mysqli_query($con, "INSERT INTO maquinarias(idmaquinaria, modelo_maquinaria, potencia_maquinaria, descripcion_maquinaria, cilindro_maquinaria, tipo_maquinaria, estado)
-															VALUES('$idmaquinaria','$modelo_maquinaria', '$potencia_maquinaria', '$descripcion_maquinaria', '$cilindro_maquinaria', '$tipo_maquinaria', '$estado')") or die(mysqli_error());
-						if($insert){
-							echo '<div class="alert alert-success alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Bien hecho! Los datos han sido guardados con éxito.</div>';
-						}else{
-							echo '<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Error. No se pudo guardar los datos !</div>';
-						}
-				}else{
-					echo '<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Error. Id exite!</div>';
-				}
-			}
-			?>
-
-			<form class="form-horizontal" action="" method="post">
-				<div class="form-group">
-					<label class="col-sm-3 control-label">Id</label>
-					<div class="col-sm-2">
-						<input type="text" name="idmaquinaria" class="form-control" placeholder="Id" required>
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="col-sm-3 control-label">Modelo</label>
-					<div class="col-sm-4">
-						<input type="text" name="modelo_maquinaria" class="form-control" placeholder="Modelo de maquinaria" required>
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="col-sm-3 control-label">Potencia</label>
-					<div class="col-sm-4">
-						<input type="text" name="potencia_maquinaria" class="form-control" placeholder="Potencia de maquinaria" required>
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="col-sm-3 control-label">Descripción</label>
-					<div class="col-sm-3">
-						<textarea name="descripcion_maquinaria" class="form-control" placeholder="Descripción maquinaria"></textarea>
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="col-sm-3 control-label">Cilindros</label>
-					<div class="col-sm-4">
-						<input type="text" name="cilindro_maquinaria" class="form-control" placeholder="Cilindros de maquinaria" required>
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="col-sm-3 control-label">Tipo</label>
-					<div class="col-sm-3">
-						<input type="text" name="tipo_maquinaria" class="form-control" placeholder="Tipo de maquinaria" required>
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="col-sm-3 control-label">Estado</label>
-					<div class="col-sm-3">
-						<select name="estado" class="form-control">
-							<option value=""> ----- </option>
-                            <option value="1">Disponible</option>
-							<option value="2">En Uso</option>
-							<option value="3">Reparación</option>
-						</select>
-					</div>
-				</div>
-				
-				<div class="form-group">
-					<label class="col-sm-3 control-label">&nbsp;</label>
-					<div class="col-sm-6">
-						<input type="submit" name="add" class="btn btn-sm btn-primary guardar" value="Guardar datos">
-						<a href="index.php" class="btn btn-sm btn-danger">Cancelar</a>
-					</div>
-				</div>
-			</form>
+                ...........................................................
 		</div>
-	</div>
-        </div>
-		  </div>
+		</div>
     </section>
 	</div>
 <!-- ./wrapper -->
 
-<!-- REQUIRED SCRIPTS -->
-
 <!-- jQuery -->
 <script src="plugins/jquery/jquery.min.js"></script>
-<!-- Bootstrap -->
+<!-- jQuery UI 1.11.4 -->
+<script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+    $.widget.bridge('uibutton', $.ui.button)
+</script>
+<!-- Bootstrap 4 -->
 <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- AdminLTE -->
-<script src="dist/js/adminlte.js"></script>
-
-<!-- OPTIONAL SCRIPTS -->
+<!-- ChartJS -->
 <script src="plugins/chart.js/Chart.min.js"></script>
+<!-- Sparkline -->
+<script src="plugins/sparklines/sparkline.js"></script>
+<!-- JQVMap -->
+<script src="plugins/jqvmap/jquery.vmap.min.js"></script>
+<script src="plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+<!-- jQuery Knob Chart -->
+<script src="plugins/jquery-knob/jquery.knob.min.js"></script>
+<!-- daterangepicker -->
+<script src="plugins/moment/moment.min.js"></script>
+<script src="plugins/daterangepicker/daterangepicker.js"></script>
+<!-- Tempusdominus Bootstrap 4 -->
+<script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+<!-- Summernote -->
+<script src="plugins/summernote/summernote-bs4.min.js"></script>
+<!-- overlayScrollbars -->
+<script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<!-- AdminLTE App -->
+<script src="dist/js/adminlte.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="dist/js/pages/dashboard3.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/bootstrap-datepicker.js"></script>
+<script src="dist/js/pages/dashboard.js"></script>
+
 </body>
 </html>
