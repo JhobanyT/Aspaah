@@ -47,14 +47,14 @@ if (!isset($_SESSION['id'])) {
   </div>
 
   <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+  <nav class="main-header navbar navbar-expand navbar-dark">
     <!-- Left navbar links -->
     <ul class="navbar-nav">
       <li class="nav-item">
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="listar_estado_maquinaria.php" class="nav-link">Home</a>
+        <a href="index2.php" class="nav-link">Home</a>
       </li>
     </ul>
 
@@ -113,6 +113,18 @@ if (!isset($_SESSION['id'])) {
                 <a href="./index8.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Agregar Socio</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="./listar_operadores.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Operadores</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="./add_operadores.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Agregar Operador</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -187,7 +199,7 @@ if (!isset($_SESSION['id'])) {
             </div><!-- /.col -->
             <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="index2.php">Home</a></li>
                 <li class="breadcrumb-item active">Dashboard v1</li>
             </ol>
             </div><!-- /.col -->
@@ -222,7 +234,7 @@ if (!isset($_SESSION['id'])) {
 
                 <div class="row">
                   <div class="col-md-12">
-                       <h1 class="text-center"> Clasificacion de maquinarias</h1>
+                      <h1 class="text-center"> Clasificacion de maquinarias</h1>
                     <div id="chartdiv">
                     </div>
                   </div>

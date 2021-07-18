@@ -13,11 +13,16 @@ include("conexion_maquinaria.php");
 <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
 <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
 <link rel="stylesheet" href="dist/css/adminlte.min.css">
-<link rel="stylesheet" href="dist/css/extra_maquinariasu.css">
+<link rel="stylesheet" href="dist/css/extra_maquinarias.css">
 
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link href="css/bootstrap-datepicker.css" rel="stylesheet">
-	<link href="css/style_nav.css" rel="stylesheet">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/bootstrap-datepicker.css" rel="stylesheet">
+<link href="css/style_nav.css" rel="stylesheet">
+<style>
+		.content {
+			margin-top: 80px;
+		}
+	</style>
 
 </head>
 <body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">

@@ -101,6 +101,18 @@
                 </a>
               </li>
               <li class="nav-item">
+                <a href="./listar_operadores.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Operadores</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="./add_operadores.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Agregar Operador</p>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a href="./listar_estado_maquinaria.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Estado de Maquinaria</p>
