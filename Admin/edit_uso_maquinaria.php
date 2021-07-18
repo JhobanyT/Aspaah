@@ -18,18 +18,13 @@ include("conexion_maquinaria.php");
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/bootstrap-datepicker.css" rel="stylesheet">
 	<link href="css/style_nav.css" rel="stylesheet">
-	<style>
-		.content {
-			margin-top: 80px;
-		}
-	</style>
 
 </head>
 <body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 	<div class="container">
 	<ul class="nav navbar-nav ">
-		<li><a href="listar_uso_maquinaria.php" class="active edit_buton edit_buton_2" id="botones_LA">Lista de maquinariasu</a><a class="edit_buton" href="add_maquinaria.php" id="botones_LA">Agregar Una Maquinaria</a></li>
-		</ul>
+					<li><a href="listar_uso_maquinaria.php" class="active" id="botones_LA">Lista Uso de maquinarias</a><a href="add_uso_maquinaria.php" id="botones_LA">Agregar Uso de Maquinaria</a></li>
+				</ul>
 		<div class="content">
 			<h2>Editar Datos de Uso Maquinaria</h2>
 			<hr />

@@ -93,6 +93,12 @@ include("conexion_maquinaria.php");
                 </a>
               </li>
               <li class="nav-item">
+                <a href="./index8.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Agregar Socio</p>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a href="./listar_estado_maquinaria.php" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Estado de Maquinaria</p>
@@ -117,12 +123,6 @@ include("conexion_maquinaria.php");
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index8.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Editar Uso de Maquinaria</p>
-                </a>
-              </li>
-              <li class="nav-item">
                 <a href="./register.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Registrar Administrador</p>
@@ -131,7 +131,7 @@ include("conexion_maquinaria.php");
             </ul>
           </li>
           <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
+            <a href="#" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -140,35 +140,13 @@ include("conexion_maquinaria.php");
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="./plantillaDashboard.php" class="nav-link active">
+                <a href="./dashboard.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Socios</p>
+                  <p>Sistema Dashboard
+                  </p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="./plantillaDashboard.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Estado de Maquinaria</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="./plantillaDashboard.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Agregar Maquinaria</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="./plantillaDashboard.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Listar Uso de Maquinaria</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="./plantillaDashboard.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Agregar Uso de Maquinaria</p>
-                </a>
-              </li>
+              
               <li class="nav-item cerrar_sesion_boton">
                 <a href="cerrar-sesion.php" class="close-sesion">Cerrar Sesión</a>
               </li>

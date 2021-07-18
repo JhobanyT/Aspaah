@@ -31,9 +31,9 @@ Email	 	 : info@obedalvarado.pw
 	<![endif]-->
 </head>
 <body>
-	<nav class="navbar navbar-default navbar-fixed-top">
-		<?php include("nav.php");?>
-	</nav>
+<ul class="nav navbar-nav ">
+					<li><a href="listar_uso_maquinaria.php" class="active" id="botones_LA">Lista Uso de maquinarias</a><a href="add_uso_maquinaria.php" id="botones_LA">Agregar Uso de Maquinaria</a></li>
+				</ul>
 	<div class="container">
 		<div class="content">
 			<h2>Datos socio &raquo; Perfil</h2>
@@ -99,7 +99,7 @@ Email	 	 : info@obedalvarado.pw
 				</tr>
 			</table>
 			
-			<a href="listar_uso_maquinaria.php" class="btn btn-sm btn-info"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span> Regresar</a>
+			<a href="listar_uso_maquinaria.php" class="btn btn-sm btn-info"><span aria-hidden="true"></span> Regresar</a>
 		</div>
 	</div>
 

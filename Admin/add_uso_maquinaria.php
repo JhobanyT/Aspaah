@@ -43,7 +43,7 @@ include("conexion_maquinaria.php");
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="index.php" class="nav-link">Home</a>
+        <a href="listar_uso_maquinaria.php" class="nav-link">Home</a>
       </li>
     </ul>
 
@@ -99,13 +99,19 @@ include("conexion_maquinaria.php");
                 </a>
               </li>
               <li class="nav-item">
+                <a href="./index8.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Agregar socio</p>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a href="./listar_estado_maquinaria.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Estado de Maquinaria</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./add_maquinaria.php" class="nav-link active">
+                <a href="./add_maquinaria.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Agregar Maquinaria</p>
                 </a>
@@ -117,15 +123,9 @@ include("conexion_maquinaria.php");
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./add_uso_maquinaria.php" class="nav-link">
+                <a href="./add_uso_maquinaria.php" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Agregar Uso de Maquinaria</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="./index8.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Editar Uso de Maquinaria</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -137,7 +137,7 @@ include("conexion_maquinaria.php");
             </ul>
           </li>
           <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
+            <a href="#" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -146,35 +146,13 @@ include("conexion_maquinaria.php");
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="./plantillaDashboard.php" class="nav-link active">
+                <a href="./dashboard.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Socios</p>
+                  <p>Sistema Dashboard
+                  </p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="./plantillaDashboard.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Estado de Maquinaria</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="./plantillaDashboard.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Agregar Maquinaria</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="./plantillaDashboard.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Listar Uso de Maquinaria</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="./plantillaDashboard.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Agregar Uso de Maquinaria</p>
-                </a>
-              </li>
+              
               <li class="nav-item cerrar_sesion_boton">
                 <a href="cerrar-sesion.php" class="close-sesion">Cerrar Sesión</a>
               </li>
@@ -193,12 +171,12 @@ include("conexion_maquinaria.php");
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Estado de maquinarias</h1>
+            <h1 class="m-0">Uso de maquinarias</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="listar_estado_maquinaria2.php">Home</a></li>
-              <li class="breadcrumb-item active">Estado de maquinarias</li>
+              <li class="breadcrumb-item"><a href="listar_uso_maquinaria.php">Home</a></li>
+              <li class="breadcrumb-item active">Agregar Uso de maquinarias</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -212,29 +190,26 @@ include("conexion_maquinaria.php");
         <!-- Info boxes -->
         <div class="row">
         <ul class="nav navbar-nav ">
-        <li><a href="listar_estado_maquinaria.php" class="active" id="botones_LA">Lista de Maquinarias</a><a href="add_maquinaria.php" id="botones_LA">Agregar Una Maquinaria</a></li>
+					<li><a href="listar_uso_maquinaria.php" class="active" id="botones_LA">Lista Uso de maquinarias</a><a href="add_uso_maquinaria.php" id="botones_LA">Agregar Uso de Maquinaria</a></li>
 				</ul>
         <div class="container">
 		<div class="content">
-			<h2>Agregar Maquinaria</h2>
+			<h2>Agregar Uso de Maquinarias</h2>
 			<hr />
 
 			<?php
 			if(isset($_POST['add'])){
-				$idmaquinaria		     = mysqli_real_escape_string($con,(strip_tags($_POST["idmaquinaria"],ENT_QUOTES)));//Escanpando caracteres 
-				$modelo_maquinaria		     = mysqli_real_escape_string($con,(strip_tags($_POST["modelo_maquinaria"],ENT_QUOTES)));//Escanpando caracteres 
-				$potencia_maquinaria	 = mysqli_real_escape_string($con,(strip_tags($_POST["potencia_maquinaria"],ENT_QUOTES)));//Escanpando caracteres 
-				$descripcion_maquinaria	 = mysqli_real_escape_string($con,(strip_tags($_POST["descripcion_maquinaria"],ENT_QUOTES)));//Escanpando caracteres 
-				$cilindro_maquinaria	     = mysqli_real_escape_string($con,(strip_tags($_POST["cilindro_maquinaria"],ENT_QUOTES)));//Escanpando caracteres
-				$tipo_maquinaria		 = mysqli_real_escape_string($con,(strip_tags($_POST["tipo_maquinaria"],ENT_QUOTES)));//Escanpando caracteres 
-				$estado			 = mysqli_real_escape_string($con,(strip_tags($_POST["estado"],ENT_QUOTES)));//Escanpando caracteres 
-				
+				$id_maquinariau		     = mysqli_real_escape_string($con,(strip_tags($_POST["id_maquinariau"],ENT_QUOTES)));//Escanpando caracteres 
+				$idsocios		     = mysqli_real_escape_string($con,(strip_tags($_POST["idsocios"],ENT_QUOTES)));//Escanpando caracteres 
+				$idmaquinaria	 = mysqli_real_escape_string($con,(strip_tags($_POST["idmaquinaria"],ENT_QUOTES)));//Escanpando caracteres 
+				$idoperador	     = mysqli_real_escape_string($con,(strip_tags($_POST["idoperador"],ENT_QUOTES)));//Escanpando caracteres
+				$fecha_uso		 = mysqli_real_escape_string($con,(strip_tags($_POST["fecha_uso"],ENT_QUOTES)));
 			
 
-				$cek = mysqli_query($con, "SELECT * FROM maquinarias WHERE idmaquinaria='$idmaquinaria'");
+				$cek = mysqli_query($con, "SELECT * FROM maquinariasu WHERE id_maquinariau='$id_maquinariau'");
 				if(mysqli_num_rows($cek) == 0){
-						$insert = mysqli_query($con, "INSERT INTO maquinarias(idmaquinaria, modelo_maquinaria, potencia_maquinaria, descripcion_maquinaria, cilindro_maquinaria, tipo_maquinaria, estado)
-															VALUES('$idmaquinaria','$modelo_maquinaria', '$potencia_maquinaria', '$descripcion_maquinaria', '$cilindro_maquinaria', '$tipo_maquinaria', '$estado')") or die(mysqli_error());
+						$insert = mysqli_query($con, "INSERT INTO maquinariasu(id_maquinariau, idsocios, idmaquinaria, idoperador, fecha_uso)
+															VALUES('$id_maquinariau','$idsocios', '$idmaquinaria', '$idoperador', '$fecha_uso')") or die(mysqli_error());
 						if($insert){
 							echo '<div class="alert alert-success alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Bien hecho! Los datos han sido guardados con éxito.</div>';
 						}else{
@@ -250,48 +225,31 @@ include("conexion_maquinaria.php");
 				<div class="form-group">
 					<label class="col-sm-3 control-label">Id</label>
 					<div class="col-sm-2">
-						<input type="text" name="idmaquinaria" class="form-control" placeholder="Id" required>
+						<input type="text" name="id_maquinariau" class="form-control" placeholder="Id" required>
 					</div>
 				</div>
 				<div class="form-group">
-					<label class="col-sm-3 control-label">Modelo</label>
+					<label class="col-sm-3 control-label">Id Socio</label>
 					<div class="col-sm-4">
-						<input type="text" name="modelo_maquinaria" class="form-control" placeholder="Modelo de maquinaria" required>
+						<input type="text" name="idsocios" class="form-control" placeholder="Ingrese el Id de socio" required>
 					</div>
 				</div>
 				<div class="form-group">
-					<label class="col-sm-3 control-label">Potencia</label>
+					<label class="col-sm-3 control-label">Id Maquinaria</label>
 					<div class="col-sm-4">
-						<input type="text" name="potencia_maquinaria" class="form-control" placeholder="Potencia de maquinaria" required>
+						<input type="text" name="idmaquinaria" class="form-control" placeholder="Ingrese el Id de Maquinaria" required>
 					</div>
 				</div>
 				<div class="form-group">
-					<label class="col-sm-3 control-label">Descripción</label>
-					<div class="col-sm-3">
-						<textarea name="descripcion_maquinaria" class="form-control" placeholder="Descripción maquinaria"></textarea>
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="col-sm-3 control-label">Cilindros</label>
+					<label class="col-sm-3 control-label">Id Operador</label>
 					<div class="col-sm-4">
-						<input type="text" name="cilindro_maquinaria" class="form-control" placeholder="Cilindros de maquinaria" required>
+						<input type="text" name="idoperador" class="form-control" placeholder="Ingrese el Id de Operador" required>
 					</div>
 				</div>
 				<div class="form-group">
-					<label class="col-sm-3 control-label">Tipo</label>
+					<label class="col-sm-3 control-label">Fecha de Uso</label>
 					<div class="col-sm-3">
-						<input type="text" name="tipo_maquinaria" class="form-control" placeholder="Tipo de maquinaria" required>
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="col-sm-3 control-label">Estado</label>
-					<div class="col-sm-3">
-						<select name="estado" class="form-control">
-							<option value=""> ----- </option>
-                            <option value="1">Disponible</option>
-							<option value="2">En Uso</option>
-							<option value="3">Reparación</option>
-						</select>
+						<input type="text" name="fecha_uso" class="form-control" placeholder="00-00-0000" required>
 					</div>
 				</div>
 				
@@ -299,7 +257,7 @@ include("conexion_maquinaria.php");
 					<label class="col-sm-3 control-label">&nbsp;</label>
 					<div class="col-sm-6">
 						<input type="submit" name="add" class="btn btn-sm btn-primary guardar" value="Guardar datos">
-						<a href="index.php" class="btn btn-sm btn-danger">Cancelar</a>
+						<a href="listar_uso_maquinaria.php" class="btn btn-sm btn-danger">Cancelar</a>
 					</div>
 				</div>
 			</form>

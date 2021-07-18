@@ -95,7 +95,7 @@ if (!isset($_SESSION['id'])) {
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
           <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
+            <a href="#" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Gestionar
@@ -104,9 +104,15 @@ if (!isset($_SESSION['id'])) {
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="./index2.php" class="nav-link active">
+                <a href="./index2.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Socios</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="./index8.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Agregar Socio</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -131,12 +137,6 @@ if (!isset($_SESSION['id'])) {
                 <a href="./add_uso_maquinaria.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Agregar Uso de Maquinaria</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="./index8.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Editar Uso de Maquinari</p>
                 </a>
               </li>
               <li class="nav-item">

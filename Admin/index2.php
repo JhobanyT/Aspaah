@@ -111,6 +111,12 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                 </a>
               </li>
               <li class="nav-item">
+                <a href="./index8.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Agregar Socio</p>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a href="./listar_estado_maquinaria.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Estado de Maquinaria</p>
@@ -135,12 +141,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index8.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Editar Uso de Maquinari</p>
-                </a>
-              </li>
-              <li class="nav-item">
                 <a href="./register.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Registrar Administrador</p>
@@ -149,7 +149,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
             </ul>
           </li>
           <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
+            <a href="#" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -158,7 +158,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="./dashboard.php" class="nav-link active">
+                <a href="./dashboard.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Sistema Dashboard
                   </p>
@@ -199,51 +199,14 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
     <!-- Main content -->
     <section class="content">
-        <div class="container-fluid">
-        <h3>Dashboard</h3>
-<!-- Styles -->
-<style>
-#chartdiv {
-  width: 100%;
-  height: 550px;
-}
-#divbarras {
-  width: 100%;
-  height: 550px;
-}
-#divdis {
-  width: 100%;
-  height: 550px;
-}
-</style>
-<!-- HTML -->
-
-<div class="row">
-  <div class="col-md-12">
-    <div id="chartdiv"></div>
-  </div>
-</div>
-<div class="row">
-  <div class="col-md-12">
-    <div id="divbarras"></div>
-  </div>
-</div>
-<div class="row">
-  <div class="col-md-12">
-    <div id="divdis"></div>
-  </div>
-</div>
-
-
-
-<!-- Chart code -->
-
-<script>
-
-</script>
-		</div>
+      <div class="container-fluid">
+        <!-- Info boxes -->
+        <div class="row">
+          ........................
+        </div>
+      </div>
     </section>
-	</div>
+</div>
 <!-- ./wrapper -->
 <script type="text/javascript " src="dashboard_pie.js"></script>
 <script type="text/javascript" src="dashboard_bar.js"></script>

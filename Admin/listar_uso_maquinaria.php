@@ -93,6 +93,12 @@ include("conexion_maquinaria.php");
                 </a>
               </li>
               <li class="nav-item">
+                <a href="./index8.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Agregar Socio</p>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a href="./listar_estado_maquinaria.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Estado de Maquinaria</p>
@@ -117,12 +123,6 @@ include("conexion_maquinaria.php");
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index8.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Editar Uso de Maquinaria</p>
-                </a>
-              </li>
-              <li class="nav-item">
                 <a href="./register.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Registrar Administrador</p>
@@ -131,7 +131,7 @@ include("conexion_maquinaria.php");
             </ul>
           </li>
           <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
+            <a href="#" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -140,35 +140,13 @@ include("conexion_maquinaria.php");
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="./plantillaDashboard.php" class="nav-link active">
+                <a href="./dashboard.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Socios</p>
+                  <p>Sistema Dashboard
+                  </p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="./plantillaDashboard.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Estado de Maquinaria</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="./plantillaDashboard.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Agregar Maquinaria</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="./plantillaDashboard.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Listar Uso de Maquinaria</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="./plantillaDashboard.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Agregar Uso de Maquinaria</p>
-                </a>
-              </li>
+              
               <li class="nav-item cerrar_sesion_boton">
                 <a href="cerrar-sesion.php" class="close-sesion">Cerrar Sesión</a>
               </li>
@@ -193,7 +171,7 @@ include("conexion_maquinaria.php");
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="index2.php">Home</a></li>
-              <li class="breadcrumb-item active">Uso de Maquinarias</li>
+              <li class="breadcrumb-item active">Lista Uso de Maquinarias</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -207,11 +185,11 @@ include("conexion_maquinaria.php");
         <!-- Info boxes -->
         <div class="row">
         <ul class="nav navbar-nav ">
-					<li><a href="listar_uso_maquinaria.php" class="active" id="botones_LA">Lista de Uso maquinariasu</a><a href="add_uso_maquinaria.php" id="botones_LA">Agregar Una Maquinaria</a></li>
+					<li><a href="listar_uso_maquinaria.php" class="active" id="botones_LA">Lista Uso de maquinarias</a><a href="add_uso_maquinaria.php" id="botones_LA">Agregar Uso de Maquinaria</a></li>
 				</ul>
         <div class="container">
 		  <div class="content">
-			<h2>Uso de Maquinarias</h2>
+			<h2>Lista Uso de Maquinarias</h2>
 			<hr />
 
 			<?php
@@ -232,14 +210,14 @@ include("conexion_maquinaria.php");
 			}
 			?>
 
-			<form class="form-inline" method="get">
+			<form class="form-inline filtro_style" method="get">
 				<div class="form-group">
-					<select name="filter" class="form-control" onchange="form.submit()">
-						<option value="0">Filtros de datos de maquinariasu</option>
+					<select name="filter" class=" filtro_style" onchange="form.submit()">
+						<option value="0"></option>
 						<?php $filter = (isset($_GET['filter']) ? strtolower($_GET['filter']) : NULL);  ?>
-						<option value="1" <?php if($filter == 'Tetap'){ echo 'selected'; } ?>>Disponible</option>
-						<option value="2" <?php if($filter == 'Kontrak'){ echo 'selected'; } ?>>En Uso</option>
-                        <option value="3" <?php if($filter == 'Outsourcing'){ echo 'selected'; } ?>>Reparación</option>
+						<option value="1" <?php if($filter == 'Tetap'){ echo 'selected'; } ?>></option>
+						<option value="2" <?php if($filter == 'Kontrak'){ echo 'selected'; } ?>></option>
+                        <option value="3" <?php if($filter == 'Outsourcing'){ echo 'selected'; } ?>></option>
 					</select>
 				</div>
 			</form>
@@ -266,11 +244,11 @@ include("conexion_maquinaria.php");
 						echo '
 						<tr>
 							<td>'.$row['id_maquinariau'].'</td>
-							<td><a href="datos_asociado_maquinaria.php?nik='.$row['id_maquinariau'].'"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> '.$row['idsocios'].'</a></td>
-							<td><a href="datos_maquinaria.php?nik='.$row['id_maquinariau'].'"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> '.$row['idmaquinaria'].'</a></td>
-							<td><a href="datos_operador.php?nik='.$row['id_maquinariau'].'"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> '.$row['idoperador'].'</a></td>
+							<td><a href="datos_asociado_maquinaria.php?nik='.$row['id_maquinariau'].'"><i class="fa fa-book" aria-hidden="true"></i> '.$row['idsocios'].'</a></td>
+							<td><a href="datos_maquinaria.php?nik='.$row['id_maquinariau'].'"><i class="fa fa-book" aria-hidden="true"></i> '.$row['idmaquinaria'].'</a></td>
+							<td><a href="datos_operador.php?nik='.$row['id_maquinariau'].'"><i class="fa fa-book" aria-hidden="true"></i> '.$row['idoperador'].'</a></td>
 							<td>'.$row['fecha_uso'].'</td>
-						echo
+						
 							<td>
 
 								<a href="edit_uso_maquinaria.php?nik='.$row['id_maquinariau'].'" title="Editar datos" class="btn btn-primary btn-sm editar"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
@@ -286,7 +264,7 @@ include("conexion_maquinaria.php");
 		</div>
     </section>
 	</div>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
           <!-- /.col -->
         
