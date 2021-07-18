@@ -158,35 +158,13 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="./plantillaDashboard.php" class="nav-link active">
+                <a href="./dashboard.php" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Socios</p>
+                  <p>Sistema Dashboard
+                  </p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="./plantillaDashboard.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Estado de Maquinaria</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="./plantillaDashboard.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Agregar Maquinaria</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="./plantillaDashboard.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Listar Uso de Maquinaria</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="./plantillaDashboard.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Agregar Uso de Maquinaria</p>
-                </a>
-              </li>
+              
               <li class="nav-item cerrar_sesion_boton">
                 <a href="cerrar-sesion.php" class="close-sesion">Cerrar Sesión</a>
               </li>
@@ -222,14 +200,59 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     <!-- Main content -->
     <section class="content">
         <div class="container-fluid">
-        <div class="row">
-                ...........................................................
-		</div>
+        <h3>Dashboard</h3>
+<!-- Styles -->
+<style>
+#chartdiv {
+  width: 100%;
+  height: 550px;
+}
+#divbarras {
+  width: 100%;
+  height: 550px;
+}
+#divdis {
+  width: 100%;
+  height: 550px;
+}
+</style>
+<!-- HTML -->
+
+<div class="row">
+  <div class="col-md-12">
+    <div id="chartdiv"></div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div id="divbarras"></div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div id="divdis"></div>
+  </div>
+</div>
+
+
+
+<!-- Chart code -->
+
+<script>
+
+</script>
 		</div>
     </section>
 	</div>
 <!-- ./wrapper -->
-
+<script type="text/javascript " src="dashboard_pie.js"></script>
+<script type="text/javascript" src="dashboard_bar.js"></script>
+<script type="text/javascript" src="dashboard_dis.js"></script>
+<!-- Resources -->
+<script src="amcharts4/core.js"></script>
+<script src="amcharts4/charts.js"></script>
+<script src="amcharts4/themes/animated.js"></script>
+<script src="amcharts4/themes/dark.js"></script>
 <!-- jQuery -->
 <script src="plugins/jquery/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
