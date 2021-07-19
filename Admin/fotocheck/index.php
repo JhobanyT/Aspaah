@@ -1,11 +1,44 @@
 <?php
 
-	include('../conexion.php');
-	$id=$_REQUEST["id"];
+include("../conexion_socios.php");
+
+// escaping, additionally removing everything that could be (html/javascript-) code
+$nik = mysqli_real_escape_string($con,(strip_tags($_GET["nik"],ENT_QUOTES)));
+$sql = mysqli_query($con, "SELECT * FROM socios WHERE idsocios='$nik'");
+if(mysqli_num_rows($sql) == 0){
+	header("Location: index2.php");
+}else{
+	$row = mysqli_fetch_assoc($sql);
+}
+if(isset($_POST['save'])){
+	$idsocios		     = mysqli_real_escape_string($con,(strip_tags($_POST["idsocios"],ENT_QUOTES)));//Escanpando caracteres 
+	$nombres_socios		     = mysqli_real_escape_string($con,(strip_tags($_POST["nombres_socios"],ENT_QUOTES)));//Escanpando caracteres 
+	$apellidos_materno_socio	 = mysqli_real_escape_string($con,(strip_tags($_POST["apellidos_materno_socio"],ENT_QUOTES)));//Escanpando caracteres 
+	$apellido_paterno_socio	 = mysqli_real_escape_string($con,(strip_tags($_POST["apellido_paterno_socio"],ENT_QUOTES)));//Escanpando caracteres 
+	$dni_socios	     = mysqli_real_escape_string($con,(strip_tags($_POST["dni_socios"],ENT_QUOTES)));//Escanpando caracteres 
+	$fnacimiento_socios		 = mysqli_real_escape_string($con,(strip_tags($_POST["fnacimiento_socios"],ENT_QUOTES)));//Escanpando caracteres 
+	$email_socios		 = mysqli_real_escape_string($con,(strip_tags($_POST["email_socios"],ENT_QUOTES)));//Escanpando caracteres 
+	$pasword_socio		 = mysqli_real_escape_string($con,(strip_tags($_POST["pasword_socio"],ENT_QUOTES)));//Escanpando caracteres 
+	$direccion_socios		 = mysqli_real_escape_string($con,(strip_tags($_POST["direccion_socios"],ENT_QUOTES)));//Escanpando caracteres 
+	$celular_socios		 = mysqli_real_escape_string($con,(strip_tags($_POST["celular_socios"],ENT_QUOTES)));//Escanpando caracteres 
+	$id_categoria_socio 		 = mysqli_real_escape_string($con,(strip_tags($_POST["id_categoria_socio"],ENT_QUOTES)));//Escanpando caracteres 
+	$distrito 		 = mysqli_real_escape_string($con,(strip_tags($_POST["distrito"],ENT_QUOTES)));//Escanpando caracteres 
+	$estado_socio			 = mysqli_real_escape_string($con,(strip_tags($_POST["estado_socio"],ENT_QUOTES)));//Escanpando caracteres  
+	$logo_update			 = mysqli_real_escape_string($con,(strip_tags($_POST["logo_url"],ENT_QUOTES)));//Escanpando caracteres  
 	
-	$socio=mysqli_query($link,"SELECT * FROM socios WHERE idsocios=".$id);
-	$row=mysqli_fetch_array($socio);
+	$update = mysqli_query($con, "UPDATE socios SET nombres_socios='$nombres_socios', apellidos_materno_socio='$apellidos_materno_socio', apellido_paterno_socio='$apellido_paterno_socio', dni_socios='$dni_socios', fnacimiento_socios='$fnacimiento_socios', email_socios='$email_socios', pasword_socio='$pasword_socio', direccion_socios='$direccion_socios', celular_socios='$celular_socios', id_categoria_socio='$id_categoria_socio', distrito='$distrito', estado_socio='$estado_socio' WHERE idsocios='$nik'") or die(mysqli_error());
+	if($update){
+		header("Location: edit.php?nik=".$nik."&pesan=sukses");
+	}else{
+		echo '<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Error, no se pudo guardar los datos.</div>';
+	}
+}
+
+if(isset($_GET['pesan']) == 'sukses'){
+	echo '<div class="alert alert-success alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Los datos han sido guardados con éxito.</div>';
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -62,36 +95,36 @@
                     </tr>
                       <tr>
                         <td class='col-md-3'>Nombres:</td>
-                        <td><input type="text" class="form-control input-sm" name="nombres_socios" value="<?php echo $row['1']?>" required></td>
+                        <td><input type="text" class="form-control input-sm" name="nombres_socios" value="<?php echo $row['nombres_socios']?>" required></td>
                       </tr>
                       <tr>
                         <td>Apellido Paterno:</td>
-                        <td><input type="text" class="form-control input-sm" name="apellidos_materno_socio" value="<?php echo $row['2']?>" required></td>
+                        <td><input type="text" class="form-control input-sm" name="apellidos_materno_socio" value="<?php echo $row['apellidos_materno_socio']?>" required></td>
                       </tr>
                       <tr>
                         <td>Apellido Materno:</td>
-                        <td><input type="text" class="form-control input-sm" name="apellido_paterno_socio" value="<?php echo $row['3']?>" ></td>
+                        <td><input type="text" class="form-control input-sm" name="apellido_paterno_socio" value="<?php echo $row['apellido_paterno_socio']?>" ></td>
                       </tr>
                       <tr>
                         <td>Dni:</td>
-                        <td><input type="text" class="form-control input-sm" required name="dni_socios" value="<?php echo $row['5']?>"></td>
+                        <td><input type="text" class="form-control input-sm" required name="dni_socios" value="<?php echo $row['dni_socios']?>"></td>
                       </tr>
 
 					  <tr>
                         <td>Fecha de Nacimiento:</td>
-                        <td><input type="text" class="form-control input-sm" name="fnacimiento_socios" value="<?php echo $row["6"];?>" required></td>
+                        <td><input type="text" class="form-control input-sm" name="fnacimiento_socios" value="<?php echo $row["fnacimiento_socios"];?>" required></td>
                       </tr>
 					  <tr>
                         <td>Correo Electronico:</td>
-                        <td><input type="email" class="form-control input-sm" name="email_socios" value="<?php echo $row["7"];?>" required></td>
+                        <td><input type="email" class="form-control input-sm" name="email_socios" value="<?php echo $row["email_socios"];?>" required></td>
                       </tr>
 					  <tr>
                         <td>Dirección:</td>
-                        <td><input type="text" class="form-control input-sm" name="direccion_socios" value="<?php echo $row["8"];?>"></td>
+                        <td><input type="text" class="form-control input-sm" name="direccion_socios" value="<?php echo $row["direccion_socios"];?>"></td>
                       </tr>
 					  <tr>
                         <td>Celular:</td>
-                        <td><input type="text" class="form-control input-sm" name="celular_socios" value="<?php echo $row["9"];?>"></td>
+                        <td><input type="text" class="form-control input-sm" name="celular_socios" value="<?php echo $row["celular_socios"];?>"></td>
                       </tr>
 					  <tr>
                         <td>Categoria:</td>
@@ -114,7 +147,7 @@
                 <button type="submit" class="btn btn-sm btn-success noPrint"><i class="glyphicon glyphicon-refresh"></i> Actualizar hoja de asociados</button>
 
 				<button onclick="imprimir();" type="submit" class="btn btn-sm btn-success noPrint"><i class="glyphicon glyphicon-print"></i>&nbsp;Imprimir Datos</button>     
-				
+				<input type="button" onclick="history.back()" name="volver atrás" value="volver atrás" class="btn btn-sm btn-success noPrint">
 				 
                     </div>
             
@@ -194,4 +227,12 @@ $( "#form" ).submit(function( event ) {
 				
 			}
     </script>
+<script>
+ 
+        
+           
+            $.index.php.close();
+            $("#form").load("index2.php");                                            
+      
 
+</script>

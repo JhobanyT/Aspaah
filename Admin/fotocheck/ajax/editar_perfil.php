@@ -34,28 +34,28 @@
 			!empty($_POST['id_categoria_socio'])
 		){
 		/* Connect To Database*/
-		include("../../conexion.php");
+		include("../../conexion_socios.php");
 		// escaping, additionally removing everything that could be (html/javascript-) code
-		$id=mysqli_real_escape_string($link,(strip_tags($_POST["id"],ENT_QUOTES)));
-		$ns=mysqli_real_escape_string($link,(strip_tags($_POST["nombres_socios"],ENT_QUOTES)));
-		$am=mysqli_real_escape_string($link,(strip_tags($_POST["apellidos_materno_socio"],ENT_QUOTES)));
-		$ap=mysqli_real_escape_string($link,(strip_tags($_POST["apellido_paterno_socio"],ENT_QUOTES)));
-		$ds=mysqli_real_escape_string($link,(strip_tags($_POST["dni_socios"],ENT_QUOTES)));
-		$fs=mysqli_real_escape_string($link,(strip_tags($_POST["fnacimiento_socios"],ENT_QUOTES)));
-		$es=mysqli_real_escape_string($link,(strip_tags($_POST["email_socios"],ENT_QUOTES)));
-		$dss=mysqli_real_escape_string($link,(strip_tags($_POST["direccion_socios"],ENT_QUOTES)));
-		$cs=mysqli_real_escape_string($link,(strip_tags($_POST["celular_socios"],ENT_QUOTES)));
-		$ic=mysqli_real_escape_string($link,(strip_tags($_POST["id_categoria_socio"],ENT_QUOTES)));
-		$logo_update=mysqli_real_escape_string($link,(strip_tags($_POST["logo_url"],ENT_QUOTES)));
+		$id=mysqli_real_escape_string($con,(strip_tags($_POST["id"],ENT_QUOTES)));
+		$ns=mysqli_real_escape_string($con,(strip_tags($_POST["nombres_socios"],ENT_QUOTES)));
+		$am=mysqli_real_escape_string($con,(strip_tags($_POST["apellidos_materno_socio"],ENT_QUOTES)));
+		$ap=mysqli_real_escape_string($con,(strip_tags($_POST["apellido_paterno_socio"],ENT_QUOTES)));
+		$ds=mysqli_real_escape_string($con,(strip_tags($_POST["dni_socios"],ENT_QUOTES)));
+		$fs=mysqli_real_escape_string($con,(strip_tags($_POST["fnacimiento_socios"],ENT_QUOTES)));
+		$es=mysqli_real_escape_string($con,(strip_tags($_POST["email_socios"],ENT_QUOTES)));
+		$dss=mysqli_real_escape_string($con,(strip_tags($_POST["direccion_socios"],ENT_QUOTES)));
+		$cs=mysqli_real_escape_string($con,(strip_tags($_POST["celular_socios"],ENT_QUOTES)));
+		$ic=mysqli_real_escape_string($con,(strip_tags($_POST["id_categoria_socio"],ENT_QUOTES)));
+		$logo_update=mysqli_real_escape_string($con,(strip_tags($_POST["logo_url"],ENT_QUOTES)));
 		
 		$sql="UPDATE socios SET nombres_socios='".$ns."', apellidos_materno_socio='".$am."', apellido_paterno_socio='".$ap."', dni_socios='".$ds."', fnacimiento_socios='".$fs."', email_socios='".$es."', direccion_socios='".$dss."', celular_socios='".$cs."', id_categoria_socio='".$ic."',logo_url='".$logo_update."' WHERE idsocios='$id'";
-		$query_update = mysqli_query($link,$sql);
+		$query_update = mysqli_query($con,$sql);
 			if ($query_update){
 				$messages[] = "Datos han sido actualizados satisfactoriamente.";
                                                        
         
 			} else{
-				$errors []= "Lo siento algo ha salido mal intenta nuevamente.".mysqli_error($link);
+				$errors []= "Lo siento algo ha salido mal intenta nuevamente.".mysqli_error($con);
 			}
 		} else {
 			$errors []= "Error desconocido.";

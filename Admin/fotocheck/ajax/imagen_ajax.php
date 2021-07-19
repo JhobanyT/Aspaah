@@ -1,6 +1,6 @@
 	<?php
 				/* Connect To Database*/
-				include('../../conexion.php');
+				include("../../conexion_socios.php");
 			
 				
 				if (isset($_FILES["imagefile"])){
@@ -33,8 +33,8 @@
 					
 					
 	
-                    $sql = "UPDATE socios SET $logo_update WHERE idsocios='id'";
-                    $query_new_insert = mysqli_query($link,$sql);
+                    $sql = "UPDATE socios SET $logo_update WHERE idsocios='2'";
+                    $query_new_insert = mysqli_query($con,$sql);
 
                    
                     if ($query_new_insert) {
@@ -42,7 +42,7 @@
 						<img class="img-responsive" src="/aspaah/admin/fotocheck/img/<?php echo $image_name;?>" alt="Logo">
 						<?php
                     } else {
-                        $errors[] = "Lo sentimos, actualización falló. Intente nuevamente. ".mysqli_error($link);
+                        $errors[] = "Lo sentimos, actualización falló. Intente nuevamente. ".mysqli_error($con);
                     }
 			}
 		}	

@@ -303,7 +303,8 @@ include("conexion_socios.php");
 							<td>
 								<a href="edit.php?nik='.$row['idsocios'].'" title="Editar datos" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
 								<a href="index2.php?aksi=delete&nik='.$row['idsocios'].'" title="Eliminar" onclick="return confirm(\'Esta seguro de borrar los datos '.$row['nombres_socios'].'?\')" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
-							</td>
+                <a href="fotocheck/index.php?nik='.$row['idsocios'].'" title="Información" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
+                </td>
 						</tr>
 						';
 					}
@@ -314,64 +315,6 @@ include("conexion_socios.php");
 		</div>
 	</div>
 
-<<<<<<< HEAD
-  <tbody>
-    <?php
-      $cont=0;
-      while($data=mysqli_fetch_array($registros)){
-      $cont=$cont+1;
-    ?>
-    <tr class="table-primary">
-      <th scope="row" class="text-center"><?= $data[0] ?></th>
-      <td class="text-center"><?= $data[1] ?></td>
-      <td class="text-center"><?= $data[2] ?></td>
-      <td class="text-center"><?= $data[3] ?></td>
-      <td class="text-center"><?= $data[4] ?></td>
-      <td class="text-center"> <a data-fancybox data-type="ajax" data-src="socio_edit.php?id=<?= $data[0]?>" href="javascript:;">putoitoss</a></td>
-      <td class="text-center"><a href="javascript:fn_eliminar(<?= $data[0] ?>)">Eliminar</a></td>
-<<<<<<< HEAD
-      <td class="text-center"> <a data-fancybox data-type="ajax" data-src="perfil/index1.php?id=<?= $data[0]?>" href="fotocheck/index.php?id=<?= $data[0]?>">Información</a></td>
-=======
-      <td class="text-center"> <a data-fancybox data-type="ajax" data-src="socio_edit.php?id=<?= $data[0]?>" href="javascript:;">Editar</a></td>
->>>>>>> d927e2b51ca3f70e4e7a7ecc6fc27a4b1c6e06aa
-    </tr>
-    <?php } 
-    ?>
-  </tbody>
-</table>
-
-<div class="paginador text-center">
-  <?php
-    //echo $pagina;
-    //PAGINADOR 1
-    /*
-    echo "<div class='text-center' id='paginador'>";
-    if($pagina < $total_paginas){
-        echo "<a href='".$url."?pagina=".($pagina - 1)."'>Anterior</a>";
-    }
-    echo " || ";
-    if($pagina < $total_paginas){
-        echo "<a href='".$url."?pagina=".($pagina + 1)."'>Siguiente</a>";
-    }
-    echo "</div>";
-    */
-    //PAGINACION 2
-    $total_paginas=(isset($total_paginas)?$total_paginas:0);
-    for ($i=1;$i<$total_paginas;$i++) { 
-      
-      if($pagina < $total_paginas){
-        //echo "<a href='".$url."?pagina=".($i)."'>P $i</a>";
-        //echo " | ";
-  ?>
-          
-          <a href="javascript:fn_paginar(<?= $i ?>)"><?="P".$i?> |</a>
-  <?php
-      }
-    }
-  ?>
-</div>
-=======
->>>>>>> 9099c38f85959012af7b6c8dbe1f96294ed02a42
         </div>
       </div>
     </section>
