@@ -1,0 +1,125 @@
+.cerrar_sesion_boton {
+    border: solid 1px #fff;
+    padding: 8px 0px;
+    border-radius: 8px;
+    transition: all .5s;
+    display: flex;
+    justify-content: center;
+}
+.cerrar_sesion_boton:hover {
+    background-color: rgb(11, 9, 27);
+}
+.container-all {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    margin-top: 100px;
+    display: flex;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.ctn-form {
+    width: 80%;
+    padding: 40px;
+    background: #f7f7f7;
+}
+.logo {
+    width: 150px;
+    display: block;
+    margin: auto;
+}
+.title {
+    text-align: center;
+    margin-top: 20px;
+    font-weight: 300;
+    color: rgb(4, 20, 9);
+}
+label {
+    display: block;
+    margin-top: 30px;
+    font-size: 20px;
+    font-weight: 300;
+    color: rgb(4, 20, 9);
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    height: 30px;
+    background: rgba(0, 0, 0, 0);
+    border: 0px;
+    outline: 0px;
+    border-bottom: 2px solid rgb(4, 20, 9) !important;
+    color: #245a2b;
+    font-size: 16px;
+}
+
+input[type="submit"] {
+    width: 100%;
+    height: 50px;
+    margin-top: 60px;
+    color: white;
+    border: 0px;
+    background: linear-gradient(90deg, #201614, #26e760);
+    font-weight: 300;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+input[type="submit"]:hover {
+    background: linear-gradient(90deg, #0f0b0d, #0a7406);
+}
+.msg-error {
+    color: red;
+    display: block;
+    margin-top: 10px;
+}
+#botones_LA {
+    height: 35px;
+    background-color: rgb(7, 50, 56) !important;
+    color: rgb(205, 236, 236) !important;
+    border-radius: 10px;
+    padding: 5px 5px 0px 5px;
+    margin-left: 4px;
+    display: inline-block !important;
+}
+#botones_LA:hover {
+    height: 35px;
+    background-color: rgb(12, 31, 34) !important;
+    color: rgb(205, 236, 236) !important;
+    border-radius: 10px;
+    padding: 5px 5px 0px 5px;
+    margin-left: 4px;
+    display: inline-block !important;
+}
+.disponible {
+    background-color: #065e21;
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+}
+.uso {
+    background-color: rgb(109, 6, 6);
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+}
+.reparacion {
+    background-color: rgb(5, 37, 63);
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+}
+.editar{
+    background-color: rgb(5, 37, 63) !important;
+}
+.borrar{
+    background-color: rgb(109, 6, 6) !important;
+}
+.editar:hover{
+    background-color: #000 !important;
+}
+.borrar:hover{
+    background-color: #000 !important;
+}
+.filtro_style {
+    display: none !important;
+    opacity: 0 !important;
+}
