@@ -5,7 +5,7 @@
 
   $go=$_REQUEST['go'];
 
- if ($go=="pie") {
+if ($go=="pie") {
     $sql="SELECT tipo_maquinaria, COUNT(idmaquinaria) as total FROM maquinarias GROUP BY tipo_maquinaria";
     $resulset = $cnn->query($sql); 
     $rows=array();
@@ -13,8 +13,8 @@
     $rows[]=$data;
   }
   print (json_encode($rows));
- }
- if($go=="bar"){
+}
+if($go=="bar"){
     $sql="SELECT 
 CASE
 WHEN month(fnacimiento_socios) = '01' THEN 'Enero'
@@ -35,11 +35,11 @@ COUNT(idsocios) as caantidad FROM socios GROUP by month(fnacimiento_socios)";
     $resulset = $cnn->query($sql); 
     $rows=array();
     while($data=$resulset->fetch_array(PDO::FETCH_ASSOC)){
-     $rows[]=$data;
+      $rows[]=$data;
     }
     print (json_encode($rows));
   }
-   if ($go=="dis") {
+    if ($go=="dis") {
     $sql="SELECT distrito,COUNT(idsocios) as total from socios GROUP by distrito";
     $resulset = $cnn->query($sql); 
     $rows=array();
@@ -47,5 +47,5 @@ COUNT(idsocios) as caantidad FROM socios GROUP by month(fnacimiento_socios)";
     $rows[]=$data;
   }
   print (json_encode($rows));
- }
+}
 ?>

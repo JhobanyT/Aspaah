@@ -56,18 +56,17 @@ if(isset($_GET['pesan']) == 'sukses'){
 	<br>
 
 	<div class="container">
-      <div class="row">
-      <form method="post" id="form">
-	  
+        <div class="row">
+        <form method="post" id="form">
+
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 toppad" >
-   
-   
-          <div class="panel panel-success"><br>
-              <h2 class="panel-title"><center><font size="5"><i class='glyphicon glyphicon-user'></i>&nbsp;REGISTRO ASOCIADO-ASPAAH&nbsp;<img src="img/logo.png" width="45px"height="40px"></font></center></h2>
+
+        <div class="panel panel-success"><br>
+            <h2 class="panel-title"><center><font size="5"><i class='glyphicon glyphicon-user'></i>&nbsp;REGISTRO ASOCIADO-ASPAAH&nbsp;<img src="img/logo.png" width="45px"height="40px"></font></center></h2>
 
             <div class="panel-body">
-              <div class="row">
-			  
+            <div class="row">
+
                 <div class="col-md-3 col-lg-3 " align="center"> 
 				<div id="load_img" class="">
 					<img class="img-responsive" src="<?php echo $row['logo_url'];?>" alt="Logo" name="imagefile">
@@ -75,7 +74,7 @@ if(isset($_GET['pesan']) == 'sukses'){
 				</div>
 				<br>				
 					<div class="row">
-  						<div class="col-md-12">
+  					  <div class="col-md-12">
 							<div class="form-group noPrint">
 							<input type="hidden" name="id" value="<?= $row['idsocios'] ?>">
 							<input type="hidden" name="logo_url" value="<?= $row['logo_url'] ?>">
