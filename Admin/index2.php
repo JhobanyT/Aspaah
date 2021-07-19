@@ -25,13 +25,11 @@ include("conexion_socios.php");
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
 
   <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
-
   <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
   <link href="fontawesonme/css/font-awesome.css" rel="stylesheet">
   <link href="css/bootstrap-datepicker.css" rel="stylesheet">
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
   <link rel="stylesheet" href="dist/css/extra.css">
-  
 </head>
 <body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">
@@ -246,7 +244,7 @@ include("conexion_socios.php");
 				<tr>
 					<th>Id</th>
 					<th>Nombres</th>
-                    <th>Apellidos</th>
+          <th>Apellidos</th>
 					<th>Dni</th>
 					<th>Fecha de Nacimiento</th>
 					<th>Dirección</th>
@@ -254,7 +252,7 @@ include("conexion_socios.php");
 					<th>Categoria</th>
 					<th>Distrito</th>
 					<th>estado</th>
-                    <th>Acciones</th>
+          <th>Acciones</th>
 				</tr>
 				<?php
 				if($filter){
@@ -317,7 +315,6 @@ include("conexion_socios.php");
 <script src="plugins/raphael/raphael.min.js"></script>
 <script src="plugins/jquery-mapael/jquery.mapael.min.js"></script>
 <script src="plugins/jquery-mapael/maps/usa_states.min.js"></script>
-<!-- ChartJS -->
 <script src="plugins/chart.js/Chart.min.js"></script>
 
 <script src="dist/js/demo.js"></script>
