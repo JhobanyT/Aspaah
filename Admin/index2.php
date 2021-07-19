@@ -285,16 +285,10 @@ include("conexion_socios.php");
 						echo '
 							</td>
 							<td>
-<<<<<<< HEAD
 								<a href="edit.php?nik='.$row['idsocios'].'" title="Editar datos" class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
 								<a href="index2.php?aksi=delete&nik='.$row['idsocios'].'" title="Eliminar" onclick="return confirm(\'Esta seguro de borrar los datos '.$row['nombres_socios'].'?\')" class="btn btn-danger btn-sm"><i class="fa fa-trash" aria-hidden="true"></i></a>
-							</td>
-=======
-								<a href="edit.php?nik='.$row['idsocios'].'" title="Editar datos" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
-								<a href="index2.php?aksi=delete&nik='.$row['idsocios'].'" title="Eliminar" onclick="return confirm(\'Esta seguro de borrar los datos '.$row['nombres_socios'].'?\')" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
-                <a href="fotocheck/index.php?nik='.$row['idsocios'].'" title="Información" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
+                <a href="fotocheck/index.php?nik='.$row['idsocios'].'" title="Información" class="btn btn-primary btn-sm"><i class="fa fa-user" aria-hidden="true"></i></a>
                 </td>
->>>>>>> f7cd348ad1fd512bcf383725497d4a8ecc6b10a6
 						</tr>
 						';
 					}
