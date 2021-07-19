@@ -117,7 +117,7 @@
             <div class="container-fluid py-3 esquema_general" id="noticiasid">
                 <div class="row">
                     <div class="col-12 text-center wow animate__animated animate__fadeInUpBig animate__delay-0.5s">
-                        <h2 class="aboutl"><strong>Noticias</strong></h2>
+                        <h2 class="aboutl"><strong>Noticiiiias</strong></h2>
                         <section id="slider">
                             <input type="radio" name="slider" id="s1">
                             <input type="radio" name="slider" id="s2">
@@ -241,14 +241,14 @@
                                 <div class="text-center text-sm-left offset-top-30">
                                 <ul class="row-16 list-0 list-custom list-marked list-marked-sm list-marked-secondary">
                                     <li>En ganaderia</li>
-                                    <li>Innovar Maquinarias </li>
+                                    <li>Innovar </li>
                                     <li>Riego Tecnificado</li>
                                     <li>Convenios</li>
                                     <li>Mejor rentabilidad</li>
                                     <li>Siembra agrícola</li>
                                 </ul>
                                 </div>
-                                <div class="group-md group-middle"><a class="button button-width-xl-230 button-primary button-pipaluk" href="#">Contáctenos</a><a class="button button-width-xl-310 button-default-outline button-wapasha" href="#">Ubíquenos</a></div>
+                                <div class="group-md group-middle"><a class="button button-width-xl-230 button-primary button-pipaluk" href="#contactosid">Contáctenos</a><a class="button button-width-xl-310 button-default-outline button-wapasha" href="#">Ubíquenos</a></div>
                             </div>
                             <div class="p-2 tab-pane fade" id="tabs-4-2">
                                 <p>Ser una asociación lider en la región de Puno, que este al servicio de sus productores para poder juntos lograr una mejora en su calidad de vida, ofreciéndoles siempre servicios de calidad.</p>
@@ -262,7 +262,7 @@
                                     <li>Cooperación mutua</li>
                                 </ul>
                                 </div>
-                                <div class="group-md group-middle"><a class="button button-width-xl-230 button-primary button-pipaluk" href="#">Contáctenos</a><a class="button button-width-xl-310 button-default-outline button-wapasha" href="contact-us.html">Ubíquenos</a></div>
+                                <div class="group-md group-middle"><a class="button button-width-xl-230 button-primary button-pipaluk" href="#contactosid">Contáctenos</a><a class="button button-width-xl-310 button-default-outline button-wapasha" href="contact-us.html">Ubíquenos</a></div>
                             </div>
                             <div class="p-2 tab-pane fade" id="tabs-4-3">
                                 <p>Promover la asociatividad y transferencia de tecnologia integral para un buen vivir, caracterizarnos por el cumplimiento de estándares de calidad, innovación constante de los procesos y protección del medio ambiente, manteniendo la alta vocación de servicio.</p>

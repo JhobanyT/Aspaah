@@ -3,7 +3,7 @@ class ConexionDB{
 	private $host		='127.0.0.1';
 	private $user		='root';
 	private $pass		='';
-	private $database	='db.aspaah';
+	private $database	='db_aspaah';
 
 	public function iniciarDB(){
 		
