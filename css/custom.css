@@ -2071,12 +2071,60 @@ textarea.form-input {
 }
 
 h20 {
-  font-size: 13.6px;
+  font-size: 11.2px;
   position: absolute;
-  margin-top: 9px;
+  margin-top: 7px;
 }
 
 /* Fin Sección Contáctos HJVR  */
+.menu-sticky {
+  position: fixed;
+  width: 100%;
+  -webkit-transition: all 500ms ease;
+  transition: all 500ms ease;
+  -moz-transition: all 500ms ease;
+}
+
+.header-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+}
+
+.navbar-scroll {
+  background-color: #1b9e31;
+  padding: 0;
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+          box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  -webkit-transition-duration: 0.6s;
+          transition-duration: 0.6s;
+}
+
+.navbar-scroll .nav-item .nav-link {
+  color: #36b882;
+}
+
+.navbar-scroll .header-btn {
+  color: #fff;
+  background-color: #fe4066;
+}
+
+.navbar-scroll .logo {
+  color: #000;
+  font-weight: 500;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1890px;
+  }
+}
+
 /*!
  * Bootstrap v5.0.0-beta3 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
