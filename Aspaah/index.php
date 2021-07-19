@@ -117,7 +117,7 @@
             <div class="container-fluid py-3 esquema_general" id="noticiasid">
                 <div class="row">
                     <div class="col-12 text-center wow animate__animated animate__fadeInUpBig animate__delay-0.5s">
-                        <h2 class="aboutl"><strong>Noticias</strong></h2>
+                        <h2 class="aboutl"><strong>Noticiiiias</strong></h2>
                         <section id="slider">
                             <input type="radio" name="slider" id="s1">
                             <input type="radio" name="slider" id="s2">
