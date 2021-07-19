@@ -1,12 +1,15 @@
 <?php
 
-//     session_start();
+    session_start();
 
-// if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-//     header("location: index.php");
-//     exit;
-// }
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    header("location: index.php");
+    exit;
+}
 
+?>
+<?php
+include("conexion_socios.php");
 ?>
 
 
@@ -214,60 +217,104 @@
       <div class="container-fluid">
         <!-- Info boxes -->
         <div class="row">
-                <h1 class="text-center">Gestión de Socios</h1>
-<div class="row">
-  <div class="col-md-3">
-    <div class="nuevo">
-      <a data-fancybox data-type="ajax" data-src="socio_add.php" href="javascript:;" class="btn btn-primary">Nuevo Socio</a>
-    </div>
-  </div>
-  <div class="col-md-9">
-      <form class="d-flex" method="POST" id="frm_buscador" action="">
-        <input id="buscar_nombre" class="form-control me-sm-2" type="text" placeholder="Buscar por nombre" required minlength="2">
-        <input type="submit" value="Buscar" class="btn btn-secondary my-2 my-sm-0">
-      </form>
-  </div>
-</div>
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th scope="col"class="text-center">ID</th>
-      <th scope="col"class="text-center">Nombres</th>
-      <th scope="col"class="text-center">ApellidoM</th>
-      <th scope="col"class="text-center">ApellidoP</th>
-      <th scope="col"class="text-center">ESTADO</th>
-      <th scope="col" colspan="2" class="text-center">Opciones</th>
-    </tr>
-  </thead>
-  <?php
-  include("conexion.php");
-    //$url = "list.php";
-  //PAGINADOR
-  $texto=(isset($_REQUEST["buscar_nombre"]))?$_REQUEST["buscar_nombre"]:"";
-  if(isset($_REQUEST['pagina'])){
-      $pagina=$_REQUEST['pagina'];
-  }else{
-      $pagina = 1;
-  }
+        <ul class="nav navbar-nav ">
+					<li class="active"><a href="index2.php">Lista de socio</a></li>
+					<li><a href="index8.php">Agregar socio</a></li>
+				</ul>
+	<div class="container">
+		<div class="content">
+			<h2>Lista de socios</h2>
+			<hr />
 
-  $tamano_pagina = 20;
-  
-  if(isset($_REQUEST['buscar_nombre'])){
-    $query2="SELECT * FROM socios WHERE nombres LIKE '".$texto."%' ORDER BY idsocios DESC";
+			<?php
+			if(isset($_GET['aksi']) == 'delete'){
+				// escaping, additionally removing everything that could be (html/javascript-) code
+				$nik = mysqli_real_escape_string($con,(strip_tags($_GET["nik"],ENT_QUOTES)));
+				$cek = mysqli_query($con, "SELECT * FROM socios WHERE idsocios='$nik'");
+				if(mysqli_num_rows($cek) == 0){
+					echo '<div class="alert alert-info alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> No se encontraron datos.</div>';
+				}else{
+					$delete = mysqli_query($con, "DELETE FROM socios WHERE idsocios='$nik'");
+					if($delete){
+						echo '<div class="alert alert-success alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> Datos eliminado correctamente.</div>';
+					}else{
+						echo '<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> Error, no se pudo eliminar los datos.</div>';
+					}
+				}
+			}
+			?>
 
-  }else{
-    $query1="SELECT * FROM socios";
-    $total=mysqli_query($link,$query1);
-    $total_reg = mysqli_num_rows($total);
-    $total_paginas = ceil($total_reg / $tamano_pagina);
-    $inicio = ($pagina-1)*$tamano_pagina;
-    $query2 = "SELECT * FROM socios ORDER BY idsocios DESC LIMIT ".$inicio.", ".$tamano_pagina;
-  }
-  
-  $registros = mysqli_query($link,$query2); 
-    
-  ?>
+			<form class="form-inline" method="get">
+				<div class="form-group">
+					<select name="filter" class="form-control" onchange="form.submit()">
+						<option value="0">Filtros de estado de socios</option>
+						<?php $filter = (isset($_GET['filter']) ? strtolower($_GET['filter']) : NULL);  ?>
+						<option value="1" <?php if($filter == 'Tetap'){ echo 'selected'; } ?>>Activo</option>
+						<option value="2" <?php if($filter == 'Kontrak'){ echo 'selected'; } ?>>Inactivo</option>
+					</select>
+				</div>
+			</form>
+			<br />
+			<div class="table-responsive">
+			<table class="table table-striped table-hover">
+				<tr>
+					<th>Id</th>
+					<th>Nombres</th>
+                    <th>Apellidos</th>
+					<th>Dni</th>
+					<th>Fecha de Nacimiento</th>
+					<th>Dirección</th>
+					<th>Celular</th>
+					<th>Categoria</th>
+					<th>Distrito</th>
+					<th>estado</th>
+                    <th>Acciones</th>
+				</tr>
+				<?php
+				if($filter){
+					$sql = mysqli_query($con, "SELECT * FROM socios WHERE estado_socio='$filter' ORDER BY idsocios ASC");
+				}else{
+					$sql = mysqli_query($con, "SELECT * FROM socios ORDER BY idsocios ASC");
+				}
+				if(mysqli_num_rows($sql) == 0){
+					echo '<tr><td colspan="8">No hay datos.</td></tr>';
+				}else{
+					while($row = mysqli_fetch_assoc($sql)){
+						echo '
+						<tr>
+							<td>'.$row['idsocios'].'</td>
+							<td>'.$row['nombres_socios'].'</td>
+                            <td>'.$row['apellido_paterno_socio'].''.$row['apellidos_materno_socio'].'</td>
+                            <td>'.$row['dni_socios'].'</td>
+							<td>'.$row['fnacimiento_socios'].'</td>
+                            <td>'.$row['direccion_socios'].'</td>
+							<td>'.$row['celular_socios'].'</td>
+							<td>'.$row['id_categoria_socio'].'</td>
+							<td>'.$row['distrito'].'</td>
+							<td>';
+							if($row['estado_socio'] == '1'){
+								echo '<span class="label label-success">Activo</span>';
+							}
+                            else if ($row['estado_socio'] == '2' ){
+								echo '<span class="label label-info">Inactivo</span>';
+							}
+						echo '
+							</td>
+							<td>
+								<a href="edit.php?nik='.$row['idsocios'].'" title="Editar datos" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
+								<a href="index2.php?aksi=delete&nik='.$row['idsocios'].'" title="Eliminar" onclick="return confirm(\'Esta seguro de borrar los datos '.$row['nombres_socios'].'?\')" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
+							</td>
+						</tr>
+						';
+					}
+				}
+				?>
+			</table>
+			</div>
+		</div>
+	</div>
 
+<<<<<<< HEAD
   <tbody>
     <?php
       $cont=0;
@@ -318,10 +365,15 @@
     }
   ?>
 </div>
+=======
+>>>>>>> 9099c38f85959012af7b6c8dbe1f96294ed02a42
         </div>
       </div>
     </section>
 </div>
+
+
+</script>
 <!-- ./wrapper -->
 <script type="text/javascript " src="dashboard_pie.js"></script>
 <script type="text/javascript" src="dashboard_bar.js"></script>
