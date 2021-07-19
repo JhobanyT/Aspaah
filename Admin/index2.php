@@ -282,11 +282,13 @@
       <td class="text-center"><?= $data[4] ?></td>
       <td class="text-center"> <a data-fancybox data-type="ajax" data-src="socio_edit.php?id=<?= $data[0]?>" href="javascript:;">Editar</a></td>
       <td class="text-center"><a href="javascript:fn_eliminar(<?= $data[0] ?>)">Eliminar</a></td>
+      <td class="text-center"> <a data-fancybox data-type="ajax" data-src="perfil/index1.php?id=<?= $data[0]?>" href="fotocheck/index.php?id=<?= $data[0]?>">Información</a></td>
     </tr>
     <?php } 
     ?>
   </tbody>
 </table>
+
 <div class="paginador text-center">
   <?php
     //echo $pagina;
