@@ -1,5 +1,5 @@
 <?php
-  
+include("conexion_socios.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -7,40 +7,22 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Admin | Aspaah</title>
+  
 
-  <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-  <!-- Font Awesome -->
   <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
-  <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-  <!-- Tempusdominus Bootstrap 4 -->
-  <link rel="stylesheet" href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
-  <!-- iCheck -->
-  <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
-  <!-- JQVMap -->
-  <link rel="stylesheet" href="plugins/jqvmap/jqvmap.min.css">
-  <!-- Theme style -->
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
-  <!-- overlayScrollbars -->
-  <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
-  <!-- Daterange picker -->
-  <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
-  <!-- summernote -->
-  <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
-  <link rel="stylesheet" href="dist/css/extra.css">
+  <link rel="stylesheet" href="dist/css/extra_maquinarias.css">
 </head>
 <body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">
 
-  <!-- Preloader -->
   <div class="preloader flex-column justify-content-center align-items-center">
     <img class="animation__shake" src="dist/img/LOGO PNG.PNG" alt="Aspaah Logo" height="60" width="90">
   </div>
 
-  <!-- Navbar -->
   <nav class="main-header navbar navbar-expand navbar-dark">
-    <!-- Left navbar links -->
     <ul class="navbar-nav">
       <li class="nav-item">
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
@@ -59,19 +41,17 @@
       </li>
     </ul>
   </nav>
-  <!-- /.navbar -->
 
-  <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <!-- Brand Logo -->
+
     <a href="index2.php" class="brand-link">
       <img src="dist/img/LOGO PNG.PNG" alt="Aspaah Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">Aspaah</span>
     </a>
 
-    <!-- Sidebar -->
+
     <div class="sidebar">
-      <!-- Sidebar user panel (optional) -->
+
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
           <img src="dist/img/user8-128x128.jpg" class="img-circle elevation-2" alt="User Image">
@@ -82,7 +62,7 @@
       </div>
 
 
-      <!-- Sidebar Menu -->
+
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
@@ -175,132 +155,181 @@
           </li>
         </ul>
       </nav>
-      <!-- /.sidebar-menu -->
     </div>
-    <!-- /.sidebar -->
+
 </aside>
 
 
 <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
     <div class="content-header">
         <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
             <h1 class="m-0">Registrar Socio</h1>
-            </div><!-- /.col -->
+            </div>
             <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item"><a href="index2.php">Home</a></li>
                 <li class="breadcrumb-item active">Registrar Socio</li>
             </ol>
-            </div><!-- /.col -->
-        </div><!-- /.row -->
-        </div><!-- /.container-fluid -->
+            </div>
+        </div>
+        </div>
     </div>
-    <!-- /.content-header -->
 
-    <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
-        <!-- Info boxes -->
         <div class="row">
-        <div class="formulario" style="width: 60%">
-<form method="post" id="formulario">
-  <input type="hidden" name="go" value="create">
-  <fieldset>
-    <legend>Legend</legend>
-    <div class="form-group">
-      <label class="mt-4" style="color: black">Nombres</label>
-      <input type="text" class="form-control" name="nombres_socios" placeholder="Ingrese nombres" required>
-    </div>
-    <div class="form-group">
-      <label class="mt-4" style="color: black">Apellido materno</label>
-      <input type="text" class="form-control" name="apellidos_materno_socio" placeholder="Ingrese apellido materno" required>
-    </div>
-    <div class="form-group">
-      <label class="mt-4" style="color: black">Apellidos paterno</label>
-      <input type="text" class="form-control" name="apellido_paterno_socio" placeholder="Ingrese apellidos paterno" required>
-    </div>
-    <div class="form-group">
-      <label class="mt-4" style="color: black">Estado</label>
-      <input type="text" class="form-control" name="estado_socio" placeholder="Ingrese estado" required>
-    </div>
-    <div class="form-group">
-      <label class="mt-4" style="color: black">DNI</label>
-      <input type="text" class="form-control" name="dni_socios" placeholder="Ingrese DNI" required>
-    </div>
-    <div class="form-group">
-      <label class="mt-4" style="color: black">Fecha de Nacimiento</label>
-      <input type="date" class="form-control" name="fnacimiento_socios" required>
-    </div>
-    <div class="form-group">
-      <label class="mt-4" style="color: black">Correo Electrónico</label>
-      <input type="email" class="form-control" name="email_socios" placeholder="Ingrese Email">
-    </div>
-    <div class="form-group">
-      <label class="mt-4" style="color: black">Contraseña</label>
-      <input type="text" class="form-control" name="pasword_socio" placeholder="Ingrese contraseña" required>
-    </div>
-    <div class="form-group">
-      <label class="mt-4" style="color: black">Dirección</label>
-      <input type="text" class="form-control" name="direccion_socios" placeholder="Ingrese dirección" required>
-    </div>
-    <div class="form-group">
-      <label class="mt-4" style="color: black">Celular</label>
-      <input type="text" class="form-control" name="celular_socios" placeholder="Ingrese celular">
-    </div>
-    <div class="form-group">
-      <label class="mt-4" style="color: black">Id categoria</label>
-      <input type="number" class="form-control" name="id_categoria_socio " placeholder="Ingrese id categoria">
-    </div>
-    <br>
-    <button type="submit" class="btn btn-primary">Registrar Socio</button>
-  </fieldset>
-</form>
-</div>
+        <ul class="nav navbar-nav ">
+					<li class="active"><a href="index2.php" id="botones_LA">Lista de socio</a><a href="index8.php" id="botones_LA">Agregar socio</a></li>
+				</ul>
+	<div class="container">
+		<div class="content">
+			<h2>Agregar Socio</h2>
+			<hr />
+
+			<?php
+			if(isset($_POST['add'])){
+				$idsocios		     = mysqli_real_escape_string($con,(strip_tags($_POST["idsocios"],ENT_QUOTES))); 
+				$nombres_socios		     = mysqli_real_escape_string($con,(strip_tags($_POST["nombres_socios"],ENT_QUOTES))); 
+				$apellidos_materno_socio	 = mysqli_real_escape_string($con,(strip_tags($_POST["apellidos_materno_socio"],ENT_QUOTES))); 
+				$apellido_paterno_socio	 = mysqli_real_escape_string($con,(strip_tags($_POST["apellido_paterno_socio"],ENT_QUOTES))); 
+				$dni_socios	     = mysqli_real_escape_string($con,(strip_tags($_POST["dni_socios"],ENT_QUOTES))); 
+				$fnacimiento_socios		 = mysqli_real_escape_string($con,(strip_tags($_POST["fnacimiento_socios"],ENT_QUOTES))); 
+				$email_socios		 = mysqli_real_escape_string($con,(strip_tags($_POST["email_socios"],ENT_QUOTES))); 
+				$pasword_socio		 = mysqli_real_escape_string($con,(strip_tags($_POST["pasword_socio"],ENT_QUOTES))); 
+				$direccion_socios		 = mysqli_real_escape_string($con,(strip_tags($_POST["direccion_socios"],ENT_QUOTES))); 
+				$celular_socios		 = mysqli_real_escape_string($con,(strip_tags($_POST["celular_socios"],ENT_QUOTES))); 
+				$id_categoria_socio 		 = mysqli_real_escape_string($con,(strip_tags($_POST["id_categoria_socio"],ENT_QUOTES))); 
+				$distrito 		 = mysqli_real_escape_string($con,(strip_tags($_POST["distrito"],ENT_QUOTES))); 
+				$estado_socio			 = mysqli_real_escape_string($con,(strip_tags($_POST["estado_socio"],ENT_QUOTES)));  
+				
+			
+
+				$cek = mysqli_query($con, "SELECT * FROM socios WHERE idsocios='$idsocios'");
+				if(mysqli_num_rows($cek) == 0){
+						$insert = mysqli_query($con, "INSERT INTO socios(idsocios, nombres_socios, apellidos_materno_socio, apellido_paterno_socio, dni_socios, fnacimiento_socios, email_socios, pasword_socio, direccion_socios, celular_socios, id_categoria_socio, distrito, estado_socio)
+															VALUES('$idsocios','$nombres_socios','$apellidos_materno_socio','$apellido_paterno_socio','$dni_socios','$fnacimiento_socios','$email_socios', '$pasword_socio','$direccion_socios','$celular_socios','$id_categoria_socio','$distrito','$estado_socio')") or die(mysqli_error());
+						if($insert){
+							echo '<div class="alert alert-success alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Bien hecho! Los datos han sido guardados con éxito.</div>';
+						}else{
+							echo '<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Error. No se pudo guardar los datos !</div>';
+						}
+				}else{
+					echo '<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Error. Id exite!</div>';
+				}
+			}
+			?>
+
+			<form class="form-horizontal" action="" method="post">
+				<div class="form-group">
+					<label class="col-sm-3 control-label">Id</label>
+					<div class="col-sm-2">
+						<input type="text" name="idsocios" class="form-control" placeholder="Id" required>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-3 control-label">Nombres</label>
+					<div class="col-sm-4">
+						<input type="text" name="nombres_socios" class="form-control" placeholder="Nombres" required>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-3 control-label">Apellido Materno</label>
+					<div class="col-sm-4">
+						<input type="text" name="apellidos_materno_socio" class="form-control" placeholder="Apellido Materno" required>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-3 control-label">Apellido Paterno</label>
+					<div class="col-sm-4">
+						<input type="text" name="apellido_paterno_socio" class="form-control" placeholder="Apellido Paterno" required>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-3 control-label">Dni</label>
+					<div class="col-sm-4">
+						<input type="text" name="dni_socios" class="form-control" placeholder="Dni" required>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-3 control-label">Fecha de Nacimiento</label>
+					<div class="col-sm-4">
+						<input type="date" name="fnacimiento_socios" class="form-control" required>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-3 control-label">Email</label>
+					<div class="col-sm-4">
+						<input type="email" name="email_socios" class="form-control" placeholder="@gmail.com" required>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-3 control-label">Contraseña</label>
+					<div class="col-sm-4">
+						<input type="text" name="pasword_socio" class="form-control" placeholder="Contraseña" required>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-3 control-label">Dirección</label>
+					<div class="col-sm-3">
+						<input type="text" name="direccion_socios" class="form-control" placeholder="Dirección" required>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-3 control-label">Celular</label>
+					<div class="col-sm-3">
+						<input type="text" name="celular_socios" class="form-control" placeholder="Celular" required>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-3 control-label">Categoria</label>
+					<div class="col-sm-3">
+						<input type="number" name="id_categoria_socio" class="form-control" placeholder="Categoria 1,2,3" required>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-3 control-label">Distrito</label>
+					<div class="col-sm-3">
+						<input type="text" name="distrito" class="form-control" placeholder="Distrito" required>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-3 control-label">Estado</label>
+					<div class="col-sm-3">
+						<select name="estado_socio" class="form-control">
+							<option value=""> ----- </option>
+                            <option value="1">Activo</option>
+							<option value="2">Inactivo</option>
+						</select>
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<label class="col-sm-3 control-label">&nbsp;</label>
+					<div class="col-sm-6">
+						<input type="submit" name="add" class="btn btn-sm btn-primary" value="Guardar datos">
+						<a href="index2.php" class="btn btn-sm btn-danger">Cancelar</a>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
         </div>
       </div>
     </section>
 </div>
-<script>
-  $("#formulario").on("submit", function(event,validate) {
-      event.preventDefault();
-        $.ajax({
-            url: "crud.php",
-            type: "post",
-            data: $(this).serialize(),
-            beforeSend: function() {
-              //$('.msg').html("<img src='img/ajax-loader.gif' />");
-              console.log("Enviando formulario");
-            },
-        })
-        .done(function(res) { 
-            console.log("Los datos se han llegado");
-            $.fancybox.close();
-            $("#crud").load("index2.php");                                            
-        })
-        .fail(function (res) {                    
-            console.log(res);
-        });
-  });
-</script>
-<!-- ./wrapper -->
 
-<!-- REQUIRED SCRIPTS -->
 
-<!-- jQuery -->
 <script src="plugins/jquery/jquery.min.js"></script>
-<!-- Bootstrap -->
 <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- AdminLTE -->
 <script src="dist/js/adminlte.js"></script>
 
-<!-- OPTIONAL SCRIPTS -->
 <script src="plugins/chart.js/Chart.min.js"></script>
-<!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="dist/js/pages/dashboard3.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/bootstrap-datepicker.js"></script>
 </body>
 </html>
