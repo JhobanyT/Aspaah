@@ -202,11 +202,82 @@
       <div class="container-fluid">
         <!-- Info boxes -->
         <div class="row">
-          ........................
+            <?php
+  include("conexion.php");
+?>
+<div class="formulario" style="width: 60%">
+<form method="post" id="formulario">
+  <input type="hidden" name="go" value="create">
+  <fieldset>
+    <legend>Legend</legend>
+    <div class="form-group">
+      <label class="mt-4" style="color: black">Nombres</label>
+      <input type="text" class="form-control" name="nombres_socios" placeholder="Ingrese nombres" required>
+    </div>
+    <div class="form-group">
+      <label class="mt-4" style="color: black">Apellido Materno</label>
+      <input type="text" class="form-control" name="apellidos_materno_socio" placeholder="Ingrese el apellido materno" required>
+    </div>
+    <div class="form-group">
+      <label class="mt-4" style="color: black">Apellido Paterno</label>
+      <input type="text" class="form-control" name="apellido_paterno_socio" placeholder="Ingrese el apellido paterno" required>
+    </div>
+    <div class="form-group">
+      <label class="mt-4" style="color: black">Estado</label>
+      <input type="text" class="form-control" name="estado_socio" placeholder="Activo / Inactivo" required>
+    </div>
+    <div class="form-group">
+      <label class="mt-4" style="color: black">DNI</label>
+      <input type="text" class="form-control" name="dni_socios" placeholder="Ingrese DNI" required>
+    </div>
+    <div class="form-group">
+      <label class="mt-4" style="color: black">Fecha de Nacimiento</label>
+      <input type="date" class="form-control" name="fnacimiento_socios" required>
+    </div>
+    <div class="form-group">
+      <label class="mt-4" style="color: black">Correo Electrónico</label>
+      <input type="email" class="form-control" name="email_socios" placeholder="Ingrese Email">
+    </div>
+    <div class="form-group">
+      <label class="mt-4" style="color: black">Dirección</label>
+      <input type="text" class="form-control" name="direccion_socios" placeholder="Ingrese dirección" required>
+    </div>
+    <div class="form-group">
+      <label class="mt-4" style="color: black">Celular</label>
+      <input type="text" class="form-control" name="celular_socios" placeholder="Ingrese celular">
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary">Registrar Socio</button>
+  </fieldset>
+</form>
+</div>
+
         </div>
       </div>
     </section>
 </div>
+<script>
+  $("#formulario").on("submit", function(event,validate) {
+      event.preventDefault();
+            $.ajax({
+            url: "crud.php",
+            type: "post",
+            data: $(this).serialize(),
+            beforeSend: function() {
+              //$('.msg').html("<img src='img/ajax-loader.gif' />");
+              console.log("Enviando formulario");
+            },
+        })
+        .done(function(res) { 
+            console.log("Los datos se han llegado");
+            $.fancybox.close();
+            $("#crud").load("index2.php");                                            
+        })
+        .fail(function (res) {                    
+            console.log(res);
+        });
+  });
+</script>
 <!-- ./wrapper -->
 
 <!-- REQUIRED SCRIPTS -->
