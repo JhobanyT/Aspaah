@@ -1,3 +1,6 @@
+<?php
+  
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -202,10 +205,7 @@
       <div class="container-fluid">
         <!-- Info boxes -->
         <div class="row">
-            <?php
-  include("conexion.php");
-?>
-<div class="formulario" style="width: 60%">
+        <div class="formulario" style="width: 60%">
 <form method="post" id="formulario">
   <input type="hidden" name="go" value="create">
   <fieldset>
@@ -215,16 +215,16 @@
       <input type="text" class="form-control" name="nombres_socios" placeholder="Ingrese nombres" required>
     </div>
     <div class="form-group">
-      <label class="mt-4" style="color: black">Apellido Materno</label>
-      <input type="text" class="form-control" name="apellidos_materno_socio" placeholder="Ingrese el apellido materno" required>
+      <label class="mt-4" style="color: black">Apellido materno</label>
+      <input type="text" class="form-control" name="apellidos_materno_socio" placeholder="Ingrese apellido materno" required>
     </div>
     <div class="form-group">
-      <label class="mt-4" style="color: black">Apellido Paterno</label>
-      <input type="text" class="form-control" name="apellido_paterno_socio" placeholder="Ingrese el apellido paterno" required>
+      <label class="mt-4" style="color: black">Apellidos paterno</label>
+      <input type="text" class="form-control" name="apellido_paterno_socio" placeholder="Ingrese apellidos paterno" required>
     </div>
     <div class="form-group">
       <label class="mt-4" style="color: black">Estado</label>
-      <input type="text" class="form-control" name="estado_socio" placeholder="Activo / Inactivo" required>
+      <input type="text" class="form-control" name="estado_socio" placeholder="Ingrese estado" required>
     </div>
     <div class="form-group">
       <label class="mt-4" style="color: black">DNI</label>
@@ -239,6 +239,10 @@
       <input type="email" class="form-control" name="email_socios" placeholder="Ingrese Email">
     </div>
     <div class="form-group">
+      <label class="mt-4" style="color: black">Contraseña</label>
+      <input type="text" class="form-control" name="pasword_socio" placeholder="Ingrese contraseña" required>
+    </div>
+    <div class="form-group">
       <label class="mt-4" style="color: black">Dirección</label>
       <input type="text" class="form-control" name="direccion_socios" placeholder="Ingrese dirección" required>
     </div>
@@ -246,12 +250,15 @@
       <label class="mt-4" style="color: black">Celular</label>
       <input type="text" class="form-control" name="celular_socios" placeholder="Ingrese celular">
     </div>
+    <div class="form-group">
+      <label class="mt-4" style="color: black">Id categoria</label>
+      <input type="number" class="form-control" name="id_categoria_socio " placeholder="Ingrese id categoria">
+    </div>
     <br>
     <button type="submit" class="btn btn-primary">Registrar Socio</button>
   </fieldset>
 </form>
 </div>
-
         </div>
       </div>
     </section>
@@ -259,7 +266,7 @@
 <script>
   $("#formulario").on("submit", function(event,validate) {
       event.preventDefault();
-            $.ajax({
+        $.ajax({
             url: "crud.php",
             type: "post",
             data: $(this).serialize(),
