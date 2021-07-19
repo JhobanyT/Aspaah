@@ -117,7 +117,7 @@
             <div class="container-fluid py-3 esquema_general" id="noticiasid">
                 <div class="row">
                     <div class="col-12 text-center wow animate__animated animate__fadeInUpBig animate__delay-0.5s">
-                        <h2 class="aboutl"><strong>Noticias</strong></h2>
+                        <h2 class="aboutl"><strong>Noticiiiias</strong></h2>
                         <section id="slider">
                             <input type="radio" name="slider" id="s1">
                             <input type="radio" name="slider" id="s2">
@@ -298,7 +298,7 @@
                             <h1>leche</h1>
                         </div>
                         <div class="box2">
-                            <img src="imagenes/Productos/botella.jpeg" alt="">
+                            <img src="imagenes/Productos/leche.png" alt="">
                         </div>
                     </div>
                 </div>
@@ -326,12 +326,12 @@
                 </div>
                 <div class="row">
                     <div class="box hvr-bounce-out">
-                        <img class="img-box" src="imagenes/Productos/lechepolvo.jpeg" alt="">
+                        <img class="img-box" src="imagenes/Productos/helado.jpg" alt="">
                         <div class="box1 text-center">
-                            <h1>leche condensada</h1>
+                            <h1>Helado</h1>
                         </div>
                         <div class="box2">
-                            <img src="imagenes/Productos/lecheco.jfif" alt="">
+                            <img src="imagenes/Productos/lecheco.png" alt="">
                         </div>
                     </div>
                 </div>
