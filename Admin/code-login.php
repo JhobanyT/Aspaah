@@ -1,6 +1,5 @@
 <?php
 
-    //INICIALIZAR LA SESION
     session_start();
     
     if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
@@ -30,7 +29,6 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
     
     
 
-    //VALIDAR CREDENCIALES
     if(empty($email_err) && empty($password_err)){
         
         $sql = "SELECT id, usuario, email, clave FROM usuarios WHERE email = ?";
@@ -51,7 +49,6 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
                     if(password_verify($password, $hashed_password)){
                         session_start();
                         
-                        // ALMACENAR DATOS EN VARABLES DE SESION
                         $_SESSION["loggedin"] = true;
                         $_SESSION["id"] = $id;
                         $_SESSION["email"] = $email;

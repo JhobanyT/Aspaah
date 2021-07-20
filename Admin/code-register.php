@@ -1,19 +1,15 @@
 <?php
     
-    // Incluir archivo de conexion a la base de datos
     require_once "conexionlogin.php";
-    
-    // Definir variable e inicializar con valores vacio
+
     $username = $email = $password = "";
     $username_err = $email_err = $password_err = "";
     
     if($_SERVER["REQUEST_METHOD"] == "POST"){
         
-        // VALIDANDO INPUT DE NOMBRE DE USUARIO
         if(empty(trim($_POST["username"]))){
             $username_err = "Por favor, ingrese un nombre de usuario";
         }else{
-            //prepara una declaracion de seleccion
             $sql = "SELECT id FROM usuarios WHERE usuario = ?";
             
             if($stmt = mysqli_prepare($link, $sql)){
@@ -36,11 +32,9 @@
         }
         
         
-        // VALIDANDO INPUT DE EMAIL
         if(empty(trim($_POST["email"]))){
             $email_err = "Por favor, ingrese un correo";
         }else{
-            //prepara una declaracion de seleccion
             $sql = "SELECT id FROM usuarios WHERE email = ?";
             
             if($stmt = mysqli_prepare($link, $sql)){
@@ -63,7 +57,6 @@
         }
         
         
-        // VALIDANDO CONTRASEÑA
         if(empty(trim($_POST["password"]))){
             $password_err = "Por favor, ingrese una contraseña";
         }elseif(strlen(trim($_POST["password"])) < 4){
@@ -72,8 +65,7 @@
             $password = trim($_POST["password"]);
         }
         
-        
-        // COMPROBANDO LOS ERRORES DE ENTRADA ANTES DE INSERTAR LOS DATOS EN LA BASE DE DATOS
+
         if(empty($username_err) && empty($email_err) && empty($password_err)){
             
             $sql = "INSERT INTO usuarios (usuario, email, clave) VALUES (?, ?, ?)";
@@ -81,10 +73,9 @@
             if($stmt = mysqli_prepare($link, $sql)){
                 mysqli_stmt_bind_param($stmt, "sss", $param_username, $param_email, $param_password);
                 
-                // ESTABLECIENDO PARAMETRO
                 $param_username = $username;
                 $param_email = $email;
-                $param_password = password_hash($password, PASSWORD_DEFAULT); // ENCRIPTANDO CONTRASEÑA
+                $param_password = password_hash($password, PASSWORD_DEFAULT);
                 
                 
                 if(mysqli_stmt_execute($stmt)){

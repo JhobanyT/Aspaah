@@ -52,7 +52,6 @@
 		$query_update = mysqli_query($con,$sql);
 			if ($query_update){
 				$messages[] = "Datos han sido actualizados satisfactoriamente.";
-                                                       
         
 			} else{
 				$errors []= "Lo siento algo ha salido mal intenta nuevamente.".mysqli_error($con);

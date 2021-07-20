@@ -14,7 +14,6 @@
 					
 				
 				/* Inicio Validacion*/
-				// Allow certain file formats
 				if(($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" ) and $imageFileZise>0) {
 				$errors[]= "<p>Lo sentimos, sólo se permiten archivos JPG , JPEG, PNG y GIF.</p>";
 				} else if ($imageFileZise > 1048576) {//1048576 byte=1MB
@@ -36,7 +35,6 @@
                     $sql = "UPDATE socios SET $logo_update WHERE idsocios='2'";
                     $query_new_insert = mysqli_query($con,$sql);
 
-                   
                     if ($query_new_insert) {
                         ?>
 						<img class="img-responsive" src="/aspaah/admin/fotocheck/img/<?php echo $image_name;?>" alt="Logo">

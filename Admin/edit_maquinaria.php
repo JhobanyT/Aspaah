@@ -5,30 +5,22 @@ include("conexion_maquinaria.php");
 <html lang="es">
 <head>
 <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Admin | Aspaah</title>
-
-  <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-  <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
-  <!-- overlayScrollbars -->
-  <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="dist/css/adminlte.min.css">
-  <link rel="stylesheet" href="dist/css/extra_maquinarias.css">
-
-	<!-- Bootstrap -->
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link href="css/bootstrap-datepicker.css" rel="stylesheet">
-	<link href="css/style_nav.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Admin | Aspaah</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+<link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+<link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+<link rel="stylesheet" href="dist/css/adminlte.min.css">
+<link rel="stylesheet" href="dist/css/extra_maquinarias.css">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/bootstrap-datepicker.css" rel="stylesheet">
+<link href="css/style_nav.css" rel="stylesheet">
 	<style>
 		.content {
 			margin-top: 80px;
 		}
 	</style>
-
 </head>
 <body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 	<div class="container">
@@ -51,10 +43,10 @@ include("conexion_maquinaria.php");
 				$idmaquinaria		     = mysqli_real_escape_string($con,(strip_tags($_POST["idmaquinaria"],ENT_QUOTES)));
 				$modelo_maquinaria		     = mysqli_real_escape_string($con,(strip_tags($_POST["modelo_maquinaria"],ENT_QUOTES)));
 				$potencia_maquinaria	 = mysqli_real_escape_string($con,(strip_tags($_POST["potencia_maquinaria"],ENT_QUOTES)));
-				$descripcion_maquinaria	 = mysqli_real_escape_string($con,(strip_tags($_POST["descripcion_maquinaria"],ENT_QUOTES)));//Escanpando caracteres 
-				$cilindro_maquinaria	     = mysqli_real_escape_string($con,(strip_tags($_POST["cilindro_maquinaria"],ENT_QUOTES)));//Escanpando caracteres 
-				$tipo_maquinaria		 = mysqli_real_escape_string($con,(strip_tags($_POST["tipo_maquinaria"],ENT_QUOTES)));//Escanpando caracteres 
-				$estado			 = mysqli_real_escape_string($con,(strip_tags($_POST["estado"],ENT_QUOTES)));//Escanpando caracteres  
+				$descripcion_maquinaria	 = mysqli_real_escape_string($con,(strip_tags($_POST["descripcion_maquinaria"],ENT_QUOTES))); 
+				$cilindro_maquinaria	     = mysqli_real_escape_string($con,(strip_tags($_POST["cilindro_maquinaria"],ENT_QUOTES))); 
+				$tipo_maquinaria		 = mysqli_real_escape_string($con,(strip_tags($_POST["tipo_maquinaria"],ENT_QUOTES))); 
+				$estado			 = mysqli_real_escape_string($con,(strip_tags($_POST["estado"],ENT_QUOTES)));  
 				
 				$update = mysqli_query($con, "UPDATE maquinarias SET modelo_maquinaria='$modelo_maquinaria', potencia_maquinaria='$potencia_maquinaria', descripcion_maquinaria='$descripcion_maquinaria', cilindro_maquinaria='$cilindro_maquinaria', tipo_maquinaria='$tipo_maquinaria', estado='$estado' WHERE idmaquinaria='$nik'") or die(mysqli_error());
 				if($update){
@@ -131,25 +123,15 @@ include("conexion_maquinaria.php");
 		</div>
 	</div>
 <script src="plugins/jquery/jquery.min.js"></script>
-<!-- Bootstrap -->
 <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- overlayScrollbars -->
 <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
-<!-- AdminLTE App -->
 <script src="dist/js/adminlte.js"></script>
-
-<!-- PAGE PLUGINS -->
-<!-- jQuery Mapael -->
 <script src="plugins/jquery-mousewheel/jquery.mousewheel.js"></script>
 <script src="plugins/raphael/raphael.min.js"></script>
 <script src="plugins/jquery-mapael/jquery.mapael.min.js"></script>
 <script src="plugins/jquery-mapael/maps/usa_states.min.js"></script>
-<!-- ChartJS -->
 <script src="plugins/chart.js/Chart.min.js"></script>
-
-<!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="dist/js/pages/dashboard2.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>

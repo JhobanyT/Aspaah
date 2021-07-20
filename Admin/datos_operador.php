@@ -4,29 +4,20 @@ include("conexion_maquinaria.php");
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!--
-Project      : Datos de idoperador con PHP, MySQLi y Bootstrap CRUD  (Create, read, Update, Delete) 
-Author		 : Obed Alvarado
-Website		 : http://www.obedalvarado.pw
-Blog         : http://obedalvarado.pw/blog/
-Email	 	 : info@obedalvarado.pw
--->
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Datos de idoperador</title>
-
-	<!-- Bootstrap -->
+	<title>Datos de Operador</title>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/style_nav.css" rel="stylesheet">
+	<link rel="stylesheet" href="dist/css/extra_maquinarias.css">
 	<style>
 		.content {
 			margin-top: 80px;
 		}
 	</style>
-	
 </head>
-<body>
+<body class=color_body>
 <ul class="nav navbar-nav ">
 					<li><a href="listar_uso_maquinaria.php" class="active" id="botones_LA">Lista Uso de maquinarias</a><a href="add_uso_maquinaria.php" id="botones_LA">Agregar Uso de Maquinaria</a></li>
 				</ul>
@@ -36,7 +27,6 @@ Email	 	 : info@obedalvarado.pw
 			<hr />
 			
 			<?php
-			// escaping, additionally removing everything that could be (html/javascript-) code
 			$nik = mysqli_real_escape_string($con,(strip_tags($_GET["nik"],ENT_QUOTES)));
 			
 			$sql = mysqli_query($con, "SELECT * FROM operador WHERE idoperador='$nik'");

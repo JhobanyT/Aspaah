@@ -1,8 +1,6 @@
 <?php
 
 include("../conexion_socios.php");
-
-// escaping, additionally removing everything that could be (html/javascript-) code
 $nik = mysqli_real_escape_string($con,(strip_tags($_GET["nik"],ENT_QUOTES)));
 $sql = mysqli_query($con, "SELECT * FROM socios WHERE idsocios='$nik'");
 if(mysqli_num_rows($sql) == 0){
@@ -11,20 +9,20 @@ if(mysqli_num_rows($sql) == 0){
 	$row = mysqli_fetch_assoc($sql);
 }
 if(isset($_POST['save'])){
-	$idsocios		     = mysqli_real_escape_string($con,(strip_tags($_POST["idsocios"],ENT_QUOTES)));//Escanpando caracteres 
-	$nombres_socios		     = mysqli_real_escape_string($con,(strip_tags($_POST["nombres_socios"],ENT_QUOTES)));//Escanpando caracteres 
-	$apellidos_materno_socio	 = mysqli_real_escape_string($con,(strip_tags($_POST["apellidos_materno_socio"],ENT_QUOTES)));//Escanpando caracteres 
-	$apellido_paterno_socio	 = mysqli_real_escape_string($con,(strip_tags($_POST["apellido_paterno_socio"],ENT_QUOTES)));//Escanpando caracteres 
-	$dni_socios	     = mysqli_real_escape_string($con,(strip_tags($_POST["dni_socios"],ENT_QUOTES)));//Escanpando caracteres 
-	$fnacimiento_socios		 = mysqli_real_escape_string($con,(strip_tags($_POST["fnacimiento_socios"],ENT_QUOTES)));//Escanpando caracteres 
-	$email_socios		 = mysqli_real_escape_string($con,(strip_tags($_POST["email_socios"],ENT_QUOTES)));//Escanpando caracteres 
-	$pasword_socio		 = mysqli_real_escape_string($con,(strip_tags($_POST["pasword_socio"],ENT_QUOTES)));//Escanpando caracteres 
-	$direccion_socios		 = mysqli_real_escape_string($con,(strip_tags($_POST["direccion_socios"],ENT_QUOTES)));//Escanpando caracteres 
-	$celular_socios		 = mysqli_real_escape_string($con,(strip_tags($_POST["celular_socios"],ENT_QUOTES)));//Escanpando caracteres 
-	$id_categoria_socio 		 = mysqli_real_escape_string($con,(strip_tags($_POST["id_categoria_socio"],ENT_QUOTES)));//Escanpando caracteres 
-	$distrito 		 = mysqli_real_escape_string($con,(strip_tags($_POST["distrito"],ENT_QUOTES)));//Escanpando caracteres 
-	$estado_socio			 = mysqli_real_escape_string($con,(strip_tags($_POST["estado_socio"],ENT_QUOTES)));//Escanpando caracteres  
-	$logo_update			 = mysqli_real_escape_string($con,(strip_tags($_POST["logo_url"],ENT_QUOTES)));//Escanpando caracteres  
+	$idsocios		     = mysqli_real_escape_string($con,(strip_tags($_POST["idsocios"],ENT_QUOTES))); 
+	$nombres_socios		     = mysqli_real_escape_string($con,(strip_tags($_POST["nombres_socios"],ENT_QUOTES))); 
+	$apellidos_materno_socio	 = mysqli_real_escape_string($con,(strip_tags($_POST["apellidos_materno_socio"],ENT_QUOTES))); 
+	$apellido_paterno_socio	 = mysqli_real_escape_string($con,(strip_tags($_POST["apellido_paterno_socio"],ENT_QUOTES))); 
+	$dni_socios	     = mysqli_real_escape_string($con,(strip_tags($_POST["dni_socios"],ENT_QUOTES))); 
+	$fnacimiento_socios		 = mysqli_real_escape_string($con,(strip_tags($_POST["fnacimiento_socios"],ENT_QUOTES))); 
+	$email_socios		 = mysqli_real_escape_string($con,(strip_tags($_POST["email_socios"],ENT_QUOTES))); 
+	$pasword_socio		 = mysqli_real_escape_string($con,(strip_tags($_POST["pasword_socio"],ENT_QUOTES))); 
+	$direccion_socios		 = mysqli_real_escape_string($con,(strip_tags($_POST["direccion_socios"],ENT_QUOTES))); 
+	$celular_socios		 = mysqli_real_escape_string($con,(strip_tags($_POST["celular_socios"],ENT_QUOTES))); 
+	$id_categoria_socio 		 = mysqli_real_escape_string($con,(strip_tags($_POST["id_categoria_socio"],ENT_QUOTES))); 
+	$distrito 		 = mysqli_real_escape_string($con,(strip_tags($_POST["distrito"],ENT_QUOTES))); 
+	$estado_socio			 = mysqli_real_escape_string($con,(strip_tags($_POST["estado_socio"],ENT_QUOTES)));  
+	$logo_update			 = mysqli_real_escape_string($con,(strip_tags($_POST["logo_url"],ENT_QUOTES)));  
 	
 	$update = mysqli_query($con, "UPDATE socios SET nombres_socios='$nombres_socios', apellidos_materno_socio='$apellidos_materno_socio', apellido_paterno_socio='$apellido_paterno_socio', dni_socios='$dni_socios', fnacimiento_socios='$fnacimiento_socios', email_socios='$email_socios', pasword_socio='$pasword_socio', direccion_socios='$direccion_socios', celular_socios='$celular_socios', id_categoria_socio='$id_categoria_socio', distrito='$distrito', estado_socio='$estado_socio' WHERE idsocios='$nik'") or die(mysqli_error());
 	if($update){
@@ -86,74 +84,67 @@ if(isset($_GET['pesan']) == 'sukses'){
 					</div>
 				</div>
                 <div class=" col-md-9 col-lg-9 "> 
-                  <table class="table table-condensed">
+                    <table class="table table-condensed">
                     <tbody>
-					   <tr>
+					    <tr>
                         <td>Estado:</td>
                         <td><input type="text" class="form-control input-sm" required name="estado_socio" value="<?php echo $row['estado_socio']?>"></td>
-                    </tr>
-                      <tr>
+                        </tr>
+                        <tr>
                         <td class='col-md-3'>Nombres:</td>
                         <td><input type="text" class="form-control input-sm" name="nombres_socios" value="<?php echo $row['nombres_socios']?>" required></td>
-                      </tr>
-                      <tr>
+                        </tr>
+                        <tr>
                         <td>Apellido Paterno:</td>
                         <td><input type="text" class="form-control input-sm" name="apellidos_materno_socio" value="<?php echo $row['apellidos_materno_socio']?>" required></td>
-                      </tr>
-                      <tr>
+                        </tr>
+                        <tr>
                         <td>Apellido Materno:</td>
                         <td><input type="text" class="form-control input-sm" name="apellido_paterno_socio" value="<?php echo $row['apellido_paterno_socio']?>" ></td>
-                      </tr>
-                      <tr>
+                        </tr>
+                        <tr>
                         <td>Dni:</td>
                         <td><input type="text" class="form-control input-sm" required name="dni_socios" value="<?php echo $row['dni_socios']?>"></td>
-                      </tr>
+                        </tr>
 
-					  <tr>
+					    <tr>
                         <td>Fecha de Nacimiento:</td>
                         <td><input type="text" class="form-control input-sm" name="fnacimiento_socios" value="<?php echo $row["fnacimiento_socios"];?>" required></td>
-                      </tr>
-					  <tr>
+                        </tr>
+					    <tr>
                         <td>Correo Electronico:</td>
                         <td><input type="email" class="form-control input-sm" name="email_socios" value="<?php echo $row["email_socios"];?>" required></td>
-                      </tr>
-					  <tr>
+                        </tr>
+					    <tr>
                         <td>Dirección:</td>
                         <td><input type="text" class="form-control input-sm" name="direccion_socios" value="<?php echo $row["direccion_socios"];?>"></td>
-                      </tr>
-					  <tr>
+                        </tr>
+					    <tr>
                         <td>Celular:</td>
                         <td><input type="text" class="form-control input-sm" name="celular_socios" value="<?php echo $row["celular_socios"];?>"></td>
-                      </tr>
-					  <tr>
+                        </tr>
+					    <tr>
                         <td>Categoria:</td>
                         <td><input type="text" class="form-control input-sm" name="id_categoria_socio" value="<?php echo $row["id_categoria_socio"];?>"></td>
-                      </tr>
-                   
-                        
-                     
+                        </tr>
                     </tbody>
-                  </table>
-                  
-                  
+                </table>
                 </div>
-				<div class='col-md-12 noPrint' id="resultados_ajax"></div><!-- Carga los datos ajax -->
-              </div>
+				<div class='col-md-12 noPrint' id="resultados_ajax"></div>
+                </div>
             </div>
-                 <div class="panel-footer text-center">
+                <div class="panel-footer text-center">
                     
-                     
                 <button type="submit" class="btn btn-sm btn-success noPrint"><i class="glyphicon glyphicon-refresh"></i> Actualizar hoja de asociados</button>
 
 				<button onclick="imprimir();" type="submit" class="btn btn-sm btn-success noPrint"><i class="glyphicon glyphicon-print"></i>&nbsp;Imprimir Datos</button>     
 				<input type="button" onclick="history.back()" name="volver atrás" value="volver atrás" class="btn btn-sm btn-success noPrint">
-				 
                     </div>
             
-          </div>
+        </div>
         </div>
 		</form>
-      </div>
+    </div>
 
 	
 	<?php
@@ -166,28 +157,28 @@ if(isset($_GET['pesan']) == 'sukses'){
 	</script>
 <script type="text/javascript" src=""> </script>
 
-  </body>
+</body>
 </html>
 <script type="text/javascript" src="bootstrap-filestyle.js"> </script>
 <script>
 $( "#form" ).submit(function( event ) {
-  $('.guardar_datos').attr("disabled", true);
-  
- var parametros = $(this).serialize();
-	 $.ajax({
+$('.guardar_datos').attr("disabled", true);
+
+var parametros = $(this).serialize();
+	$.ajax({
 			type: "POST",
 			url: "ajax/editar_perfil.php",
 			data: parametros,
-			 beforeSend: function(objeto){
+			beforeSend: function(objeto){
 				$("#resultados_ajax").html("Mensaje: Cargando...");
-			  },
+			},
 			success: function(datos){
 			$("#resultados_ajax").html(datos);
 			$('.guardar_datos').attr("disabled", false);
 
-		  }
+		}
 	});
-  event.preventDefault();
+event.preventDefault();
 })
 	
 </script>
@@ -205,13 +196,13 @@ $( "#form" ).submit(function( event ) {
 					
 					
 					$.ajax({
-						url: "ajax/imagen_ajax.php",        // Url to which the request is send
-						type: "POST",             // Type of request to be send, called as method
-						data: data,		  // Data sent to server, a set of key/value pairs (i.e. form fields and values)
-						contentType: false,       // The content type used when sending data to the server.
-						cache: false,             // To unable request pages to be cached
-						processData:false,        // To send DOMDocument or non processed data file it is set to false
-						success: function(data)   // A function to be called if request succeeds
+						url: "ajax/imagen_ajax.php",        
+						type: "POST",             
+						data: data,		  
+						contentType: false,       
+						cache: false,            
+						processData:false,        
+						success: function(data)   
 						{
 							$("#load_img").html(data);
 							
@@ -227,11 +218,8 @@ $( "#form" ).submit(function( event ) {
 			}
     </script>
 <script>
- 
-        
-           
+
             $.index.php.close();
             $("#form").load("index2.php");                                            
-      
 
 </script>
